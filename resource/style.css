@@ -1,0 +1,185 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Slab', serif;
+  font-family: 'Secular One', sans-serif; }
+
+.contenedorNav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  justify-content: end;
+  height: 80px;
+  width: 100%;
+  background-color: #C8BFD2;
+  box-shadow: 25px 15px 20px rgba(0, 0, 0, 0.568); }
+  .contenedorNav .itemNav {
+    margin: 7px;
+    width: 100px;
+    border-radius: 5%; }
+    .contenedorNav .itemNav a {
+      text-decoration: none;
+      font-size: 22px;
+      color: #00000073; }
+    .contenedorNav .itemNav span {
+      margin: 5px;
+      width: 100px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      width: 100%; }
+    .contenedorNav .itemNav p {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      opacity: 0; }
+  .contenedorNav .itemNav:hover span {
+    transition: .5s;
+    translate: 0px -150px; }
+  .contenedorNav .itemNav:hover p {
+    opacity: 1; }
+
+.conteiner {
+  display: grid;
+  grid-column: auto;
+  grid-template-areas: "img tx";
+  align-items: center;
+  background-color: #d2bfbf85; }
+
+.cont-img {
+  grid-area: "img";
+  margin-top: 25px;
+  width: 25vw;
+  margin-left: 15%; }
+  .cont-img img {
+    width: 100%; }
+
+.cont-p {
+  grid-area: "tx";
+  margin-top: 25px;
+  width: 25vw; }
+  .cont-p p {
+    font-family: 'Secular One';
+    font-size: 26px;
+    color: black; }
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  height: 430px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: auto;
+  margin-bottom: 3rem; }
+  .container .card {
+    width: 330px;
+    height: 430px;
+    border-radius: 8px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    margin: 20px;
+    text-align: center;
+    transition: all 0.25s; }
+    .container .card img {
+      width: 100%; }
+    .container .card h4 {
+      font-weight: 600; }
+    .container .card p {
+      margin-top: .7rem;
+      padding: 0 1rem;
+      font-size: 16px;
+      font-weight: 300; }
+    .container .card .imgauto {
+      margin-top: .85rem;
+      width: 65%; }
+  .container .container .card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2); }
+
+.ContFiltro {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-right: 25px; }
+  .ContFiltro .filtro {
+    display: none; }
+  .ContFiltro .titulo-filter {
+    font-size: 22px;
+    font-family: 'Roboto Slab';
+    margin-right: 25px;
+    margin-bottom: 35px; }
+  .ContFiltro .titulo {
+    font-size: 28px;
+    font-family: 'Roboto Slab';
+    display: flex;
+    justify-items: center;
+    width: 150px;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    cursor: pointer; }
+  .ContFiltro ul {
+    list-style: none; }
+  .ContFiltro li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 15px;
+    margin-bottom: 5px;
+    width: 250px;
+    height: 35px;
+    border: 0.25px solid rgba(59, 59, 59, 0.13);
+    border-radius: 15px;
+    box-shadow: 0.5px 3px rgba(0, 0, 0, 0.336); }
+  .ContFiltro li span {
+    text-decoration: none;
+    padding: 10px;
+    cursor: pointer; }
+
+.form .cerrarform {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-content: center; }
+
+.form form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Roboto Slab';
+  font-size: 18px; }
+  .form form label {
+    margin: 5px; }
+    .form form label span {
+      display: block;
+      margin-top: 5px;
+      margin-bottom: 5px; }
+  .form form input {
+    height: 25px;
+    width: 250px;
+    font-size: 18px;
+    border: 0.25px solid #444343;
+    border-radius: 5px; }
+  .form form select {
+    height: 25px;
+    width: 255px;
+    font-size: 18px;
+    border: 0.25px solid #444343;
+    border-radius: 5px; }
+  .form form input[type=number]::-webkit-inner-spin-button,
+  .form form input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0; }
+  .form form input::placeholder {
+    padding: 5px; }
+  .form form button {
+    height: 25px;
+    width: 255px;
+    font-size: 18px;
+    border: 0.25px solid #444343;
+    border-radius: 5px;
+    margin-top: 10px; }

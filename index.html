@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="resource/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <title>.Creditos Online</title>
+</head>
+<body>
+    <nav class="contenedorNav">
+        <div class="itemNav">
+            <a href=""><span class="material-symbols-outlined">home</span><p>Home</p></a>
+        </div>
+        <div class="itemNav">
+            <a href=""><span class="material-symbols-outlined">speed</span><p>Simulador</p></a>
+        </div>
+        <div class="itemNav">
+            <a href=""><span class="material-symbols-outlined">price_check</span><p>creditos</p></a>
+        </div>
+        <div class="itemNav">
+            <a href=""><span class="material-symbols-outlined">group</span><p>Nosotros</p></a>
+        </div>
+        <div class="itemNav">
+            <a href=""><span class="material-symbols-outlined">contacts</span><p>Contatanos</p></a>
+        </div>
+    </nav>
+    <div class="conteiner">
+        <div class="cont-img"><img src="resource/media/person.png" alt="" srcset=""></div>
+        <div class="cont-p"><p>Hola! &#128075;<br>Somos un simulador de creditos online de vehiculos &#x1F698;</br> Ademas podemos ofrecerte toda la gestion administrativa del mismo &#x1F4BC; <br> Para que solo te preocupes de buscar tu proximo vehixulo, del resto nos ocupamos nosotros.</p></div>
+    </div>
+
+
+    <div class="form">
+        <div class="cerrarform"><span class="material-symbols-outlined">cancel</span></div>
+        <form name="formulario" method="" action="">
+            <legend>Formulario de Simulacion</legend>
+            <label>
+            <input type="text" name="nombre" placeholder="Nombre" /></label>
+            <label>
+            <input type="text" name="apellido" placeholder="Apellido" /></label>
+            <label>
+            <input type="number" name="DNI" min="18" max="100" placeholder="DNI" /></label>
+            <select name="sexo" id="select-sexo">
+                <option value="">Sexo</option>
+                <option value="dog">Femenino</option>
+                <option value="cat">Masculino</option>
+                <option value="hamster">No Binario</option>
+                <option value="parrot">No especificar</option>
+            </select>
+            <label><span>Monto del credito: $</span>
+            <input type="credito" name="DNI" min="18" max="100" placeholder="500.000" /></label>
+            <select name="cuotas" id="select-cuota">
+                <option value="12">12 cuotas</option>
+                <option value="18">18 cuotas</option>
+                <option value="24">24 cuotas</option>
+                <option value="36">36cuotas</option>
+                <option value="48">48 cuotas</option>
+                <option value="60">60 cuotas</option>
+            </select>
+            <button>Simular</button>
+          </form>
+    </div>
+
+
+
+<div class="ContFiltro">
+    <p class="titulo">Filtro<span class="material-symbols-outlined">
+        keyboard_arrow_down</span></p>
+    <div class="filtro">
+        <ul><span class="titulo-filter">Por valor de cuota</span>
+            <li id="filter-valor-rec"><span>Recomendable</span></li>
+            <li id="filter-valor-menor"><span>Menor a mayor</span></li>
+            <li id="filter-valor-mayor"><span>Mayor a menor</span></li>
+        </ul>
+        <br>
+        <ul><span class="titulo-filter">Por Banco</span>
+            <li id="filter-bank-S"><span>Santander</span></li>
+            <li id="filter-bank-HCBC"><span>HCBC</span></li>
+        </ul>
+   </div>
+</div>
+
+    <div class="container">
+        <div class="card">
+            <img src="resource/media/Proyecto1.png">
+            <h4>Santander <br> Linea cuota fija convencional</h4>
+            <p>Esta linea tiene una tasa del 78% con un valor maximo para financiar de hasta el 90% del valor de la unidad pretendida.</p>
+            <img class="imgauto" src="resource/media/auto1.webp" alt="" srcset="">
+        </div>
+        
+        <div class="card">
+            <img src="resource/media/Proyecto1.png">
+            <h4>Santander <br> Inclusion financiera cuota fijas</h4>
+            <p>Esta linea tiene una tasa del 56% con un valor maximo para financiar de hasta el 90% del valor de la unidad pretendida.</p>
+            <img class="imgauto" src="resource/media/auto2.webp" alt="" srcset="">
+        </div>
+        
+        <div class="card">
+            <img src="resource/media/logo-HSBC.png">
+            <h4>HCBC <br> Inclusion financiera fuota fija</h4>
+            <p>Esta linea tiene una tasa del 38% con un valor maximo para financiar de hasta el 90% del valor de la unidad pretendida.</p>
+            <img class="imgauto" src="resource/media/auto3.png" alt="" srcset="">
+        </div>
+        
+    </div>
+
+
+
+    <script src="./resource/main.js"></script>
+</body>
+</html>
+
+
