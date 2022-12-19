@@ -122,7 +122,7 @@ html {
   align-items: flex-end;
   margin-right: 25px; }
   .ContFiltro .filtronone {
-    display: none; }
+    display: none;}
   .ContFiltro .filterview {
     display: inline; }
   .ContFiltro .titulo-filter {
@@ -243,3 +243,21 @@ html {
 .cards:hover {
   transform: translateY(-15px);
   box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2); }
+
+
+.view{
+  display: inline;
+}
+.noneview{
+  display: none;
+}
+.Error{
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 12px;
+  color: rgba(255, 0, 0, 0.747);
+}
+
+.ErrorInput{
+  box-shadow: rgba(255, 0, 0, 0.747) 1px 0 7px;
+}

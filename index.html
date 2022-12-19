@@ -48,28 +48,34 @@
         <form name="formulario" method="" action="">
             <legend>Formulario de Simulacion</legend>
             <label>
-            <input type="text" name="nombre" placeholder="Nombre" /></label>
+            <input type="text" name="nombre" placeholder="Nombre" id="form-nombre"/></label>
+            <p class="Error noneview" id="ErrorName">El valor ingresado no es valido</p>
             <label>
-            <input type="text" name="apellido" placeholder="Apellido" /></label>
+            <input type="text" name="apellido" placeholder="Apellido" id="form-apellido" /></label>
+            <p class="Error noneview" id="ErrorLastName">El valor ingresado no es valido</p>
             <label>
-            <input type="number" name="DNI" min="18" max="100" placeholder="DNI" /></label>
+            <input type="number" name="DNI" min="18" max="100" placeholder="DNI" id="form-dni"/></label>
+            <p class="Error noneview" id="ErrorDni">El valor ingresado no es valido</p>
             <select name="sexo" id="select-sexo">
-                <option value="">Sexo</option>
-                <option value="dog">Femenino</option>
-                <option value="cat">Masculino</option>
-                <option value="hamster">No Binario</option>
-                <option value="parrot">No especificar</option>
+                <option value="Sexo">Sexo</option>
+                <option value="Femenino">Femenino</option>
+                <option value="Masculino">Masculino</option>
+                <option value="NoBinario">No Binario</option>
+                <option value="NaN">No especificar</option>
             </select>
+            <p class="Error noneview" id="ErrorSex">El valor ingresado no es valido</p>
             <label><span>Monto del credito: $</span>
-            <input type="credito" name="DNI" min="18" max="100" placeholder="500.000" /></label>
-            <select name="cuotas" id="select-cuota">
+            <input type="credito" name="MCredit" min="18" max="100" placeholder="500.000" id="form-mcredit"/></label>
+            <p class="Error noneview" id="ErrorMCredit">El valor ingresado no es valido</p>
+            <select name="cuotas" id="select-cuota" class="">
                 <option value="12">12 cuotas</option>
                 <option value="18">18 cuotas</option>
                 <option value="24">24 cuotas</option>
-                <option value="36">36cuotas</option>
+                <option value="36">36 cuotas</option>
                 <option value="48">48 cuotas</option>
                 <option value="60">60 cuotas</option>
             </select>
+            <p class="Error noneview" id="ErrorCuotas">El valor ingresado no es valido</p>
             <button>Simular</button>
           </form>
     </div>

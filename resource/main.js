@@ -123,15 +123,107 @@ function filterAr (a) {
     return Cuota;
 }
 
+// Capturar eventos formulario simulacion
 
-// Funciones para mostrar/ocultar filtro
+    //Capturar mensaje de error html
+let mensajeErrorName = document.getElementById('ErrorName');
+let mensajeErrorLastName = document.getElementById('ErrorLastName');
+let mensajeErrorDni = document.getElementById('ErrorDni');
+let mensajeErrorSex = document.getElementById('ErrorSex');
+let mensajeErrorMCredit = document.getElementById('ErrorMCredit');
+let mensajeErrorCuota = document.getElementById('ErrorCuota');
+
+    //Capturar elementos del formulario y validacion
+
+let nombre = document.getElementById('form-nombre');
+nombre.onblur = () =>{
+    let x = nombre.value;
+    if(x == ''){
+        mensajeErrorName.classList.remove('noneview');
+        mensajeErrorName.classList.add('view');
+        nombre.classList.add('ErrorInput');
+    }else{
+        mensajeErrorName.classList.remove('view');
+        mensajeErrorName.classList.add('noneview');
+        nombre.classList.remove('ErrorInput');
+    }
+} 
+
+let apellido = document.getElementById('form-apellido');
+apellido.onblur = () =>{
+    let x = apellido.value;
+    if(x == ''){
+        mensajeErrorLastName.classList.remove('noneview');
+        mensajeErrorLastName.classList.add('view');
+        apellido.classList.add('ErrorInput');
+    }else{
+        mensajeErrorLastName.classList.remove('view');
+        mensajeErrorLastName.classList.add('noneview');
+        apellido.classList.remove('ErrorInput');
+    }
+}
+
+let dni = document.getElementById('form-dni');
+dni.onblur = () =>{
+    let x = parseInt(dni.value);
+    if(isNaN(x)){
+        mensajeErrorDni.classList.remove('noneview');
+        mensajeErrorDni.classList.add('view');
+        dni.classList.add('ErrorInput');
+    }else{
+        mensajeErrorDni.classList.remove('view');
+        mensajeErrorDni.classList.add('noneview');
+        dni.classList.remove('ErrorInput');
+    }
+}
+
+let sexo = document.getElementById('select-sexo');
+sexo.onblur = () =>{
+    let x = sexo.value;
+    if(x == 'Sexo'){
+        mensajeErrorSex.classList.remove('noneview');
+        mensajeErrorSex.classList.add('view');
+        sexo.classList.add('ErrorInput');
+    }else{
+        mensajeErrorSex.classList.remove('view');
+        mensajeErrorSex.classList.add('noneview');
+        sexo.classList.remove('ErrorInput');
+    }
+}
+
+let mcredit = document.getElementById('form-mcredit');
+mcredit.onblur = () =>{
+    let x = mcredit.value;
+    if(isNaN(x)){
+        mensajeErrorMCredit.classList.remove('noneview');
+        mensajeErrorMCredit.classList.add('view');
+        mcredit.classList.add('ErrorInput');
+    }else{
+        mensajeErrorMCredit.classList.remove('view');
+        mensajeErrorMCredit.classList.add('noneview');
+        mcredit.classList.remove('ErrorInput');
+    }
+}
+
+let selectcuota = document.getElementById('select-cuota');
+selectcuota.onblur = () =>{
+    let x = selectcuota.value;
+    if(x == ''){
+        mensajeErrorCuota.classList.remove('noneview');
+        mensajeErrorCuota.classList.add('view');
+        selectcuota.classList.add('ErrorInput');
+    }else{
+        mensajeErrorCuota.classList.remove('view');
+        mensajeErrorCuota.classList.add('noneview');
+        selectcuota.classList.remove('ErrorInput');
+    }
+}
+
+// Evento para mostrar/ocultar filtro
 
 let valorfilter = false;
-let clickFiltro =document.getElementById("textFilter");
+let clickFiltro = document.getElementById("textFilter");
 let MostrarFiltro = document.getElementById("Filtro");
-
-// clickFiltro.onclick(mostrarocultar(valorfilter));
-
 
 clickFiltro.onclick = () =>{
     if (valorfilter == false){
@@ -144,4 +236,3 @@ clickFiltro.onclick = () =>{
         valorfilter = false;
     }
 }
-
