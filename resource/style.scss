@@ -38,6 +38,7 @@ $med2: 2px;
     background-color: $color-4;
     box-shadow: $sombra;
     position: fixed;
+    z-index: 99999 !important;
     .itemNav {
     margin: $med1+$med2*2;
     width: 100px;
@@ -88,6 +89,7 @@ $med2: 2px;
     margin-top: (($med1+$med2)*5) + 80px;
     width: 25vw;
     margin-left: 15%;
+    z-index: 0 !important;
     img{
         width: 100%;
     }
@@ -154,13 +156,20 @@ $med2: 2px;
 
 // Filtro
 
+#textFilter{
+    margin-top: 2rem;
+}
+
 .ContFiltro{
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     margin-right: 25px;
-    .filtro{
+    .filtronone{
         display: none;
+    }
+    .filterview{
+        display: inline;
     }
     .titulo-filter{
         font-size: 22px;
@@ -271,4 +280,46 @@ $med2: 2px;
             height: 3rem;
         }
     }
+}
+
+
+.conteinerCard{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    margin-right: .5rem;
+    margin-left: .5rem;
+
+    .cards{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        width: 350px;
+        height: 400px;
+        border: 0.2px solid $color-2;
+        border-radius: .5rem;
+        margin-right: .5rem;
+        margin-left: .5rem;  
+        .imgCard{
+            width: 72%;
+            img{
+                width: 100%;
+            }
+        }
+        .txtCard{
+            p{
+                margin-left: .75rem;
+            }
+        }
+        .valor{
+            font-size: 22px;
+        }
+    }
+}
+.cards:hover{    
+    transform: translateY(-15px);
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
 }

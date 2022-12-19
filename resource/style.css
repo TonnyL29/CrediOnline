@@ -23,7 +23,8 @@ html {
   width: 100%;
   background-color: #C8BFD2;
   box-shadow: 25px 15px 20px rgba(0, 0, 0, 0.568);
-  position: fixed; }
+  position: fixed;
+  z-index: 99999 !important; }
   .contenedorNav .itemNav {
     margin: 7px;
     width: 100px;
@@ -61,7 +62,8 @@ html {
   grid-area: "img";
   margin-top: 105px;
   width: 25vw;
-  margin-left: 15%; }
+  margin-left: 15%;
+  z-index: 0 !important; }
   .cont-img img {
     width: 100%; }
 
@@ -111,13 +113,18 @@ html {
     transform: translateY(-15px);
     box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2); }
 
+#textFilter {
+  margin-top: 2rem; }
+
 .ContFiltro {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   margin-right: 25px; }
-  .ContFiltro .filtro {
+  .ContFiltro .filtronone {
     display: none; }
+  .ContFiltro .filterview {
+    display: inline; }
   .ContFiltro .titulo-filter {
     font-size: 22px;
     font-family: 'Roboto Slab';
@@ -204,3 +211,35 @@ html {
       background-color: #008CBA;
       box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
       height: 3rem; }
+
+.conteinerCard {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  margin-right: .5rem;
+  margin-left: .5rem; }
+  .conteinerCard .cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 350px;
+    height: 400px;
+    border: 0.2px solid #d2bfbf85;
+    border-radius: .5rem;
+    margin-right: .5rem;
+    margin-left: .5rem; }
+    .conteinerCard .cards .imgCard {
+      width: 72%; }
+      .conteinerCard .cards .imgCard img {
+        width: 100%; }
+    .conteinerCard .cards .txtCard p {
+      margin-left: .75rem; }
+    .conteinerCard .cards .valor {
+      font-size: 22px; }
+
+.cards:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2); }

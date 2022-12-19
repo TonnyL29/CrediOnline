@@ -122,3 +122,38 @@ function filterAr (a) {
     }
     return Cuota;
 }
+
+
+// Funciones para mostrar/ocultar filtro
+
+let valorfilter = false;
+let clickFiltro =document.getElementById("textFilter");
+let MostrarFiltro = document.getElementById("Filtro");
+
+// clickFiltro.onclick(mostrarocultar(valorfilter));
+
+
+clickFiltro.onclick = () =>{
+    if (valorfilter == false){
+        MostrarFiltro.classList.remove('filtronone');
+        MostrarFiltro.classList.add('filterview');
+    valorfilter = false;
+    }else {
+        MostrarFiltro.classList.remove('filterview');
+        MostrarFiltro.classList.add('filtronone');
+        valorfilter = true;
+    }
+}
+
+
+// function mostrarocultar (v) {
+//     if (v == false){
+//             MostrarFiltro.classList.remove('filtronone');
+//             MostrarFiltro.classList.add('filterview');
+//         valorfilter = false;
+//     }else {
+//             MostrarFiltro.classList.remove('filterview');
+//             MostrarFiltro.classList.add('filtronone');
+//         valorfilter = true;
+//     }
+// }
