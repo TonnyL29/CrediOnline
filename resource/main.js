@@ -137,23 +137,11 @@ clickFiltro.onclick = () =>{
     if (valorfilter == false){
         MostrarFiltro.classList.remove('filtronone');
         MostrarFiltro.classList.add('filterview');
-    valorfilter = false;
+        valorfilter = true;
     }else {
         MostrarFiltro.classList.remove('filterview');
         MostrarFiltro.classList.add('filtronone');
-        valorfilter = true;
+        valorfilter = false;
     }
 }
 
-
-// function mostrarocultar (v) {
-//     if (v == false){
-//             MostrarFiltro.classList.remove('filtronone');
-//             MostrarFiltro.classList.add('filterview');
-//         valorfilter = false;
-//     }else {
-//             MostrarFiltro.classList.remove('filterview');
-//             MostrarFiltro.classList.add('filtronone');
-//         valorfilter = true;
-//     }
-// }
