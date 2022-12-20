@@ -64,10 +64,12 @@
                 <option value="NaN">No especificar</option>
             </select>
             <p class="Error noneview" id="ErrorSex">El valor ingresado no es valido</p>
-            <label><span>Monto del credito: $</span>
-            <input type="credito" name="MCredit" min="18" max="100" placeholder="500.000" id="form-mcredit"/></label>
+            <label><span></span>
+            <input type="credito" name="MCredit" min="18" max="100" placeholder="Monto del credito: $" id="form-mcredit"/></label>
             <p class="Error noneview" id="ErrorMCredit">El valor ingresado no es valido</p>
             <select name="cuotas" id="select-cuota" class="">
+                <option value=""> - </option>
+                <option value="todo">Todas las cuotas disponibles</option>
                 <option value="12">12 cuotas</option>
                 <option value="18">18 cuotas</option>
                 <option value="24">24 cuotas</option>
@@ -76,7 +78,7 @@
                 <option value="60">60 cuotas</option>
             </select>
             <p class="Error noneview" id="ErrorCuotas">El valor ingresado no es valido</p>
-            <button>Simular</button>
+            <button type="button" id="btncontinuar">Simular</button>
           </form>
     </div>
 
@@ -89,45 +91,35 @@
         keyboard_arrow_down</span></p></div>
     <div class="filtronone" id="Filtro">
         <ul><span class="titulo-filter">Por valor de cuota</span>
-            <li id="filter-valor-rec"><span>Recomendable</span></li>
-            <li id="filter-valor-menor"><span>Menor a mayor</span></li>
-            <li id="filter-valor-mayor"><span>Mayor a menor</span></li>
+            <li id="filtrovalorrec"><span>Recomendable</span></li>
+            <li id="filtrovalormenor"><span>Menor a mayor</span></li>
+            <li id="filtrovalormayor"><span>Mayor a menor</span></li>
         </ul>
         <br>
         <ul><span class="titulo-filter">Por Banco</span>
-            <li id="filter-bank-S"><span>Santander</span></li>
-            <li id="filter-bank-HCBC"><span>HCBC</span></li>
+            <li id="filtrobankS"><span>Santander</span></li>
+            <li id="filtrobankHSBC"><span>HCBC</span></li>
         </ul>
    </div>
 </div>
 
-<!-- Card´s  -->
-
-<!-- <div class="Cont-Card">
-    <div class="container">
-        <div class="card">
-            <img src="resource/media/Proyecto1.png">
-            <h4>Santander <br> Linea cuota fija convencional</h4>
-            <p>Esta linea tiene una tasa del 78% con un valor maximo para financiar de hasta el 90% del valor de la unidad pretendida.</p>
-            <img class="imgauto" src="resource/media/auto1.webp" alt="" srcset="">
-        </div>
-        
-        <div class="card">
-            <img src="resource/media/Proyecto1.png">
-            <h4>Santander <br> Inclusion financiera cuota fijas</h4>
-            <p>Esta linea tiene una tasa del 56% con un valor maximo para financiar de hasta el 90% del valor de la unidad pretendida.</p>
-            <img class="imgauto" src="resource/media/auto2.webp" alt="" srcset="">
-        </div>
-        
-        <div class="card">
-            <img src="resource/media/logo-HSBC.png">
-            <h4>HCBC <br> Inclusion financiera fuota fija</h4>
-            <p>Esta linea tiene una tasa del 38% con un valor maximo para financiar de hasta el 90% del valor de la unidad pretendida.</p>
-            <img class="imgauto" src="resource/media/auto3.png" alt="" srcset="">
-        </div>
-        
+<div class="element-filter">
+    <div id="elementfilter1" class="noneview"><span>Recomendable</span>
+        <span class="material-symbols-outlined icon-cancel">cancel</span>
     </div>
-</div> -->
+    <div id="elementfilter2" class="noneview"><span>Menor a mayor</span>
+        <span class="material-symbols-outlined icon-cancel">cancel</span>
+    </div>
+    <div id="elementfilter3" class="noneview"><span>Mayor a menor</span>
+        <span class="material-symbols-outlined icon-cancel">cancel</span>
+    </div>
+    <div id="elementfilter4" class="noneview"><span>Santander</span>
+        <span class="material-symbols-outlined icon-cancel">cancel</span>
+    </div>
+    <div id="elementfilter5" class="noneview"><span>HSBC</span>
+        <span class="material-symbols-outlined icon-cancel">cancel</span>
+    </div>
+</div>
 
 
 <div class="conteinerCard">

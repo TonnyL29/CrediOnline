@@ -246,10 +246,10 @@ html {
 
 
 .view{
-  display: inline;
+  display: inline !important;
 }
 .noneview{
-  display: none;
+  display: none !important;
 }
 .Error{
   margin-top: 5px;
@@ -260,4 +260,20 @@ html {
 
 .ErrorInput{
   box-shadow: rgba(255, 0, 0, 0.747) 1px 0 7px;
+}
+
+.element-filter{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-content: center;
+  margin-top: 10px;
+}
+
+.element-filter div{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  height: 3rem;
+  width: 18rem;
 }

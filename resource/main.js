@@ -132,6 +132,10 @@ let mensajeErrorDni = document.getElementById('ErrorDni');
 let mensajeErrorSex = document.getElementById('ErrorSex');
 let mensajeErrorMCredit = document.getElementById('ErrorMCredit');
 let mensajeErrorCuota = document.getElementById('ErrorCuota');
+let btncontinuar = document.getElementById('btncontinuar');
+
+const valDatePerson = [];
+const ControlP = [false, false, false, false, false, false];
 
     //Capturar elementos del formulario y validacion
 
@@ -142,10 +146,12 @@ nombre.onblur = () =>{
         mensajeErrorName.classList.remove('noneview');
         mensajeErrorName.classList.add('view');
         nombre.classList.add('ErrorInput');
+        ControlP[0]=false;
     }else{
         mensajeErrorName.classList.remove('view');
         mensajeErrorName.classList.add('noneview');
         nombre.classList.remove('ErrorInput');
+        ControlP[0]=true;
     }
 } 
 
@@ -156,10 +162,12 @@ apellido.onblur = () =>{
         mensajeErrorLastName.classList.remove('noneview');
         mensajeErrorLastName.classList.add('view');
         apellido.classList.add('ErrorInput');
+        ControlP[1] = false;
     }else{
         mensajeErrorLastName.classList.remove('view');
         mensajeErrorLastName.classList.add('noneview');
         apellido.classList.remove('ErrorInput');
+        ControlP[1] = true;
     }
 }
 
@@ -170,10 +178,12 @@ dni.onblur = () =>{
         mensajeErrorDni.classList.remove('noneview');
         mensajeErrorDni.classList.add('view');
         dni.classList.add('ErrorInput');
+        ControlP[2] = false;
     }else{
         mensajeErrorDni.classList.remove('view');
         mensajeErrorDni.classList.add('noneview');
         dni.classList.remove('ErrorInput');
+        ControlP[2] = true;
     }
 }
 
@@ -184,10 +194,12 @@ sexo.onblur = () =>{
         mensajeErrorSex.classList.remove('noneview');
         mensajeErrorSex.classList.add('view');
         sexo.classList.add('ErrorInput');
+        ControlP[3] = false;
     }else{
         mensajeErrorSex.classList.remove('view');
         mensajeErrorSex.classList.add('noneview');
         sexo.classList.remove('ErrorInput');
+        ControlP[3] = true;
     }
 }
 
@@ -198,10 +210,12 @@ mcredit.onblur = () =>{
         mensajeErrorMCredit.classList.remove('noneview');
         mensajeErrorMCredit.classList.add('view');
         mcredit.classList.add('ErrorInput');
+        ControlP[4] = false;
     }else{
         mensajeErrorMCredit.classList.remove('view');
         mensajeErrorMCredit.classList.add('noneview');
         mcredit.classList.remove('ErrorInput');
+        ControlP[4] = true;
     }
 }
 
@@ -212,12 +226,51 @@ selectcuota.onblur = () =>{
         mensajeErrorCuota.classList.remove('noneview');
         mensajeErrorCuota.classList.add('view');
         selectcuota.classList.add('ErrorInput');
+        ControlP[5] = false;
     }else{
         mensajeErrorCuota.classList.remove('view');
         mensajeErrorCuota.classList.add('noneview');
         selectcuota.classList.remove('ErrorInput');
+        ControlP[5] = true;
     }
 }
+
+ // funcion para valir el array de control del formulario
+
+function ValidarDP(e) {
+    let r = false;;
+    for ( let i = 0; i < (e.length)-1; i++){   
+      if (e[i] == e[i+1]) {
+            r = true;
+      }else{
+            r = false;
+        break;
+      }
+    }
+    return r;
+  }
+
+btncontinuar.onclick = () =>{
+    valDatePerson.push(nombre.value);
+    valDatePerson.push(apellido.value);
+    valDatePerson.push(dni.value);
+    valDatePerson.push(sexo.value);
+    valDatePerson.push(mcredit.value);
+    valDatePerson.push(selectcuota.value);
+
+    for ( let i = 0; i < (valDatePerson.length); i++){   
+        if (valDatePerson[i] = '') {
+      }else{
+      nombre.classList.add('noneview');
+      apellido.classList.add('noneview');
+      dni.classList.add('noneview');
+      sexo.classList.add('noneview');
+      mcredit.classList.add('noneview');
+      selectcuota.classList.add('noneview');
+      }
+    }
+}
+
 
 // Evento para mostrar/ocultar filtro
 
@@ -235,4 +288,84 @@ clickFiltro.onclick = () =>{
         MostrarFiltro.classList.add('filtronone');
         valorfilter = false;
     }
+}
+
+
+// Eventos en el filtro
+
+let filtrovalorrec = document.getElementById('filtrovalorrec');
+let filtrovalormenor = document.getElementById('filtrovalormenor');
+let filtrovalormayor = document.getElementById('filtrovalormayor');
+let filtrobankS = document.getElementById('filtrobankS');
+let filtrobankHSBC = document.getElementById('filtrobankHSBC');
+let elementfilter1 = document.getElementById('elementfilter1');
+let elementfilter2 = document.getElementById('elementfilter2');
+let elementfilter3 = document.getElementById('elementfilter3');
+let elementfilter4 = document.getElementById('elementfilter4');
+let elementfilter5 = document.getElementById('elementfilter5');
+
+// Eliminar elemento del filtro y mostrar el elemento que se esta filtrando
+
+filtrovalorrec.onclick = () =>{
+    filtrovalorrec.classList.add('noneview');
+    elementfilter1.classList.remove('noneview');
+    MostrarFiltro.classList.remove('filterview');
+    MostrarFiltro.classList.add('filtronone');
+    valorfilter = false;
+}
+
+filtrovalormenor.onclick = () =>{
+    filtrovalormenor.classList.add('noneview');
+    filtrovalormayor.classList.add('noneview');
+    elementfilter2.classList.remove('noneview');
+    MostrarFiltro.classList.remove('filterview');
+    MostrarFiltro.classList.add('filtronone');
+    valorfilter = false;
+}
+filtrovalormayor.onclick = () =>{
+    filtrovalormayor.classList.add('noneview');
+    filtrovalormenor.classList.add('noneview');
+    elementfilter3.classList.remove('noneview');
+    MostrarFiltro.classList.remove('filterview');
+    MostrarFiltro.classList.add('filtronone');
+    valorfilter = false;
+}
+filtrobankS.onclick = () =>{
+    filtrobankS.classList.add('noneview');
+    elementfilter4.classList.remove('noneview');
+    MostrarFiltro.classList.remove('filterview');
+    MostrarFiltro.classList.add('filtronone');
+    valorfilter = false;
+}
+filtrobankHSBC.onclick = () =>{
+    filtrobankHSBC.classList.add('noneview');
+    elementfilter5.classList.remove('noneview');
+    MostrarFiltro.classList.remove('filterview');
+    MostrarFiltro.classList.add('filtronone');
+    valorfilter = false;
+}
+
+// eliminar el valor filtrado y volverlo a mostrar en el filtro
+
+elementfilter1.onclick = () =>{
+    elementfilter1.classList.add('noneview')
+    filtrovalorrec.classList.remove('noneview')
+}
+elementfilter2.onclick = () =>{
+    elementfilter2.classList.add('noneview')
+    filtrovalormenor.classList.remove('noneview')
+    filtrovalormayor.classList.remove('noneview');
+}
+elementfilter3.onclick = () =>{
+    elementfilter3.classList.add('noneview')
+    filtrovalormayor.classList.remove('noneview')
+    filtrovalormenor.classList.remove('noneview');
+}
+elementfilter4.onclick = () =>{
+    elementfilter4.classList.add('noneview')
+    filtrobankS.classList.remove('noneview')
+}
+elementfilter5.onclick = () =>{
+    elementfilter5.classList.add('noneview')
+    filtrobankHSBC.classList.remove('noneview')
 }
