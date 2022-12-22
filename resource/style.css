@@ -201,7 +201,7 @@ html {
     .form form input:focus {
       border: 0.25px solid #444343;
       box-shadow: 0 8px 16px 0 #82b4c577, 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
-    .form form button {
+    .form form .btncontinuar {
       height: 25px;
       width: 255px;
       font-size: 22px;

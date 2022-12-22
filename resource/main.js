@@ -134,8 +134,9 @@ let mensajeErrorMCredit = document.getElementById('ErrorMCredit');
 let mensajeErrorCuota = document.getElementById('ErrorCuota');
 let btncontinuar = document.getElementById('btncontinuar');
 
+
 const valDatePerson = [];
-const ControlP = [false, false, false, false, false, false];
+const ControlP = [false, false, false, true, false, true];
 
     //Capturar elementos del formulario y validacion
 
@@ -154,7 +155,6 @@ nombre.onblur = () =>{
         ControlP[0]=true;
     }
 } 
-
 let apellido = document.getElementById('form-apellido');
 apellido.onblur = () =>{
     let x = apellido.value;
@@ -202,11 +202,10 @@ sexo.onblur = () =>{
         ControlP[3] = true;
     }
 }
-
 let mcredit = document.getElementById('form-mcredit');
 mcredit.onblur = () =>{
     let x = mcredit.value;
-    if(isNaN(x)){
+    if(!isNaN(x)){
         mensajeErrorMCredit.classList.remove('noneview');
         mensajeErrorMCredit.classList.add('view');
         mcredit.classList.add('ErrorInput');
@@ -218,7 +217,6 @@ mcredit.onblur = () =>{
         ControlP[4] = true;
     }
 }
-
 let selectcuota = document.getElementById('select-cuota');
 selectcuota.onblur = () =>{
     let x = selectcuota.value;
@@ -233,44 +231,60 @@ selectcuota.onblur = () =>{
         selectcuota.classList.remove('ErrorInput');
         ControlP[5] = true;
     }
-}
+} 
 
- // funcion para valir el array de control del formulario
+ // funcion para valirdar el formulario antes del submit
 
-function ValidarDP(e) {
-    let r = false;;
-    for ( let i = 0; i < (e.length)-1; i++){   
-      if (e[i] == e[i+1]) {
-            r = true;
-      }else{
-            r = false;
-        break;
-      }
+ document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("formulario").addEventListener('submit', validarFormulario()); 
+ })
+
+ function validarFormulario(evento) {
+    evento.preventDefault();
+    nombre.value;
+    if(nombre.length == 0) {
+        mensajeErrorName.classList.remove('noneview');
+        mensajeErrorName.classList.add('view');
+        nombre.classList.add('ErrorInput');
+      return;
     }
-    return r;
+    apellido.value;
+    if (apellido.length > 6 && apellido.length < 20) {
+        mensajeErrorLastName.classList.remove('noneview');
+        mensajeErrorLastName.classList.add('view');
+        apellido.classList.add('ErrorInput');
+      return;
+    }
+    dni.value;
+    if (dni.parseInt > 1000000 && dni.parseInt < 99999999){
+        mensajeErrorDni.classList.remove('noneview');
+        mensajeErrorDni.classList.add('view');
+        dni.classList.add('ErrorInput');
+        return;
+    }
+    sexo.value;
+    if(sexo != 'Sexo'){
+        mensajeErrorSex.classList.remove('noneview');
+        mensajeErrorSex.classList.add('view');
+        sexo.classList.add('ErrorInput');
+        return;
+    }
+    mcredit.value;
+    if(!isNaN(mcredit)){
+        mensajeErrorMCredit.classList.remove('noneview');
+        mensajeErrorMCredit.classList.add('view');
+        mcredit.classList.add('ErrorInput');
+        return;
+    }
+    selectcuota.value;
+    if(selectcuota > 100000){
+        mensajeErrorCuota.classList.remove('noneview');
+        mensajeErrorCuota.classList.add('view');
+        selectcuota.classList.add('ErrorInput');
+        return;
+    }
+    this.submit();
   }
-
-btncontinuar.onclick = () =>{
-    valDatePerson.push(nombre.value);
-    valDatePerson.push(apellido.value);
-    valDatePerson.push(dni.value);
-    valDatePerson.push(sexo.value);
-    valDatePerson.push(mcredit.value);
-    valDatePerson.push(selectcuota.value);
-
-    for ( let i = 0; i < (valDatePerson.length); i++){   
-        if (valDatePerson[i] = '') {
-      }else{
-      nombre.classList.add('noneview');
-      apellido.classList.add('noneview');
-      dni.classList.add('noneview');
-      sexo.classList.add('noneview');
-      mcredit.classList.add('noneview');
-      selectcuota.classList.add('noneview');
-      }
-    }
-}
-
 
 // Evento para mostrar/ocultar filtro
 
@@ -365,6 +379,7 @@ elementfilter4.onclick = () =>{
     elementfilter4.classList.add('noneview')
     filtrobankS.classList.remove('noneview')
 }
+
 elementfilter5.onclick = () =>{
     elementfilter5.classList.add('noneview')
     filtrobankHSBC.classList.remove('noneview')
