@@ -236,7 +236,7 @@ selectcuota.onblur = () =>{
  // funcion para valirdar el formulario antes del submit
 
  document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById("formulario").addEventListener('submit', validarFormulario()); 
+    document.getElementById("formulario").addEventListener('submit', validarFormulario); 
  })
 
  function validarFormulario(evento) {
