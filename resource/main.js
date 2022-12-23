@@ -134,10 +134,6 @@ let mensajeErrorMCredit = document.getElementById('ErrorMCredit');
 let mensajeErrorCuota = document.getElementById('ErrorCuota');
 let btncontinuar = document.getElementById('btncontinuar');
 
-
-const valDatePerson = [];
-const ControlP = [false, false, false, true, false, true];
-
     //Capturar elementos del formulario y validacion
 
 let nombre = document.getElementById('form-nombre');
@@ -147,12 +143,10 @@ nombre.onblur = () =>{
         mensajeErrorName.classList.remove('noneview');
         mensajeErrorName.classList.add('view');
         nombre.classList.add('ErrorInput');
-        ControlP[0]=false;
     }else{
         mensajeErrorName.classList.remove('view');
         mensajeErrorName.classList.add('noneview');
         nombre.classList.remove('ErrorInput');
-        ControlP[0]=true;
     }
 } 
 let apellido = document.getElementById('form-apellido');
@@ -162,12 +156,10 @@ apellido.onblur = () =>{
         mensajeErrorLastName.classList.remove('noneview');
         mensajeErrorLastName.classList.add('view');
         apellido.classList.add('ErrorInput');
-        ControlP[1] = false;
     }else{
         mensajeErrorLastName.classList.remove('view');
         mensajeErrorLastName.classList.add('noneview');
         apellido.classList.remove('ErrorInput');
-        ControlP[1] = true;
     }
 }
 
@@ -178,43 +170,39 @@ dni.onblur = () =>{
         mensajeErrorDni.classList.remove('noneview');
         mensajeErrorDni.classList.add('view');
         dni.classList.add('ErrorInput');
-        ControlP[2] = false;
     }else{
         mensajeErrorDni.classList.remove('view');
         mensajeErrorDni.classList.add('noneview');
         dni.classList.remove('ErrorInput');
-        ControlP[2] = true;
     }
 }
 
 let sexo = document.getElementById('select-sexo');
 sexo.onblur = () =>{
     let x = sexo.value;
-    if(x == 'Sexo'){
+    if(x == 0){
         mensajeErrorSex.classList.remove('noneview');
         mensajeErrorSex.classList.add('view');
         sexo.classList.add('ErrorInput');
-        ControlP[3] = false;
     }else{
         mensajeErrorSex.classList.remove('view');
         mensajeErrorSex.classList.add('noneview');
         sexo.classList.remove('ErrorInput');
-        ControlP[3] = true;
     }
 }
 let mcredit = document.getElementById('form-mcredit');
 mcredit.onblur = () =>{
     let x = mcredit.value;
-    if(!isNaN(x)){
+    if(mcredit > 100000 && mcredit < 6000000){
         mensajeErrorMCredit.classList.remove('noneview');
         mensajeErrorMCredit.classList.add('view');
         mcredit.classList.add('ErrorInput');
-        ControlP[4] = false;
+
     }else{
         mensajeErrorMCredit.classList.remove('view');
         mensajeErrorMCredit.classList.add('noneview');
         mcredit.classList.remove('ErrorInput');
-        ControlP[4] = true;
+
     }
 }
 let selectcuota = document.getElementById('select-cuota');
@@ -224,12 +212,10 @@ selectcuota.onblur = () =>{
         mensajeErrorCuota.classList.remove('noneview');
         mensajeErrorCuota.classList.add('view');
         selectcuota.classList.add('ErrorInput');
-        ControlP[5] = false;
     }else{
         mensajeErrorCuota.classList.remove('view');
         mensajeErrorCuota.classList.add('noneview');
         selectcuota.classList.remove('ErrorInput');
-        ControlP[5] = true;
     }
 } 
 
@@ -249,7 +235,7 @@ selectcuota.onblur = () =>{
       return;
     }
     apellido.value;
-    if (apellido.length > 6 && apellido.length < 20) {
+    if (apellido.length > 0 && apellido.length < 20) {
         mensajeErrorLastName.classList.remove('noneview');
         mensajeErrorLastName.classList.add('view');
         apellido.classList.add('ErrorInput');
@@ -262,15 +248,9 @@ selectcuota.onblur = () =>{
         dni.classList.add('ErrorInput');
         return;
     }
-    sexo.value;
-    if(sexo != 'Sexo'){
-        mensajeErrorSex.classList.remove('noneview');
-        mensajeErrorSex.classList.add('view');
-        sexo.classList.add('ErrorInput');
-        return;
-    }
+
     mcredit.value;
-    if(!isNaN(mcredit)){
+    if(mcredit > 100000 && mcredit < 6000000){
         mensajeErrorMCredit.classList.remove('noneview');
         mensajeErrorMCredit.classList.add('view');
         mcredit.classList.add('ErrorInput');

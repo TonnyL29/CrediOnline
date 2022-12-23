@@ -54,18 +54,18 @@
             <input type="text" name="apellido" placeholder="Apellido" id="form-apellido" /></label>
             <p class="Error noneview" id="ErrorLastName">El valor ingresado no es valido</p>
             <label>
-            <input type="number" name="DNI" min="18" max="100" placeholder="DNI" id="form-dni"/></label>
+            <input type="number" name="DNI" min="1000000" max="99999999" placeholder="DNI" id="form-dni"/></label>
             <p class="Error noneview" id="ErrorDni">El valor ingresado no es valido</p>
             <select name="sexo" id="select-sexo">
-                <option value="Sexo">Sexo</option>
-                <option value="Femenino">Femenino</option>
-                <option value="Masculino">Masculino</option>
-                <option value="NoBinario">No Binario</option>
-                <option value="NaN">No especificar</option>
+                <option value="0">Sexo</option>
+                <option value="1">Femenino</option>
+                <option value="2">Masculino</option>
+                <option value="3">No Binario</option>
+                <option value="4">No especificar</option>
             </select>
             <p class="Error noneview" id="ErrorSex">El valor ingresado no es valido</p>
             <label><span></span>
-            <input type="credito" name="MCredit" min="18" max="100" placeholder="Monto del credito: $" id="form-mcredit"/></label>
+            <input type="credito" name="MCredit" min="100000" max="10000000" placeholder="Monto del credito: $" id="form-mcredit"/></label>
             <p class="Error noneview" id="ErrorMCredit">El valor ingresado no es valido</p>
             <select name="cuotas" id="select-cuota" class="">
                 <option value=""> - </option>
