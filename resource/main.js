@@ -364,3 +364,13 @@ elementfilter5.onclick = () =>{
     elementfilter5.classList.add('noneview')
     filtrobankHSBC.classList.remove('noneview')
 }
+
+const marcas = ["CHEVROLET","CITROEN","FIAT","DODGE","FORD","PEUGEOT","RENAULT","VOLKSWAGEN"];
+const modelosCH = ["CRUZE","EQUINOX","S-10 PICK-UP","TRAILBLAZER"];
+const modelosCT = ["C4 CACTUS","C4 LOUNGE","C5 AIRCROSS","C-ELYSÉE"];
+const modelosFI = ["ARGO","CRONOS","MOBI","TORO"];
+const modelosDG = ["JOURNEY"];
+const modelosFO = ["BRONCO SPORT","ECOSPORT KD","FIESTA KD","FOCUS KD","KA","RANGER PICK-UP"];
+const modelosPG = ["208","308","408","2008"];
+const modelosRN = ["ALASKAN PICK-UP","CAPTUR","DUSTER","DUSTER OROCH PICK-UP"];
+const modelosVW = ["AMAROK PICK-UP","NIVUS","GOL TREND","GOLF","TAOS"];
