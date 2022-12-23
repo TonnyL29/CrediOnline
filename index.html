@@ -39,14 +39,14 @@
         <div class="cont-p animate__animated animate__backInRight"><p>Hola! &#128075;<br>Somos un simulador de creditos online de vehiculos &#x1F698;</br> Ademas podemos ofrecerte toda la gestion administrativa del mismo &#x1F4BC; <br> Para que solo te preocupes de buscar tu proximo vehixulo, del resto nos ocupamos nosotros.</p></div>
     </div>
 
-    <div  class="hipervinculo" id="Simulador"><br></div>
+    <div  class="hipervinculo1" id="Simulador"><br></div>
 
 <!-- Formulario de simulacion -->
 
     <div class="form">
-        <div class="cerrarform"><span class="material-symbols-outlined">cancel</span></div>
-        <form name="formulario" method="" action="" id="formulario">
-            <legend>Formulario de Simulacion</legend>
+        <div class="cerrarform"><span class="material-symbols-outlined noneview">cancel</span></div>
+        <div class="form1"><form name="formulario" method="" action="" id="formulario">
+            <legend>Datos personales</legend>
             <label>
             <input type="text" name="nombre" placeholder="Nombre" id="form-nombre"/></label>
             <p class="Error noneview" id="ErrorName">El valor ingresado no es valido</p>
@@ -57,7 +57,7 @@
             <input type="number" name="DNI" min="1000000" max="99999999" placeholder="DNI" id="form-dni"/></label>
             <p class="Error noneview" id="ErrorDni">El valor ingresado no es valido</p>
             <select name="sexo" id="select-sexo">
-                <option value="0">Sexo</option>
+                <option value="0" selected="true" disabled="disabled">Sexo</option>
                 <option value="1">Femenino</option>
                 <option value="2">Masculino</option>
                 <option value="3">No Binario</option>
@@ -68,7 +68,7 @@
             <input type="credito" name="MCredit" min="100000" max="10000000" placeholder="Monto del credito: $" id="form-mcredit"/></label>
             <p class="Error noneview" id="ErrorMCredit">El valor ingresado no es valido</p>
             <select name="cuotas" id="select-cuota" class="">
-                <option value=""> - </option>
+                <option selected="true" disabled="disabled">Cuotas</option>
                 <option value="todo">Todas las cuotas disponibles</option>
                 <option value="12">12 cuotas</option>
                 <option value="18">18 cuotas</option>
@@ -78,8 +78,44 @@
                 <option value="60">60 cuotas</option>
             </select>
             <p class="Error noneview" id="ErrorCuotas">El valor ingresado no es valido</p>
-            <input class="btncontinuar" type="submit" value="Continuar">
           </form>
+          <form name="formulario" method="" action="" id="formulario">
+            <legend>Datos del vehículo</legend>
+            <label>
+                <select name="marca" id="select-marca">
+                    <option selected="true" disabled="disabled">Seleccione la marca</option>
+                    <option value="0">Chevrolet</option>
+                    <option value="1">Citroën</option>
+                    <option value="2">Dodge</option>
+                    <option value="3">Fiat</option>
+                    <option value="4">Ford</option>
+                    <option value="5">Honda</option>
+                    <option value="6">Jeep</option>
+                    <option value="7">Peugeot</option>
+                    <option value="8">Renault</option>
+                    <option value="9">Volkswagen</option>
+                </select></label>
+            <p class="Error noneview" id="ErrorName">El valor ingresado no es valido</p>
+            <label>
+                <select name="modelo" id="select-modelo"></select></label>
+            <p class="Error noneview" id="ErrorLastName">El valor ingresado no es valido</p>
+            <label>
+                <select name="version" id="select-version"></select></label>
+            <p class="Error noneview" id="ErrorDni">El valor ingresado no es valido</p>
+            <label>
+                <select name="anio" id="select-anio"></select></label>
+            <p class="Error noneview" id="ErrorDni">El valor ingresado no es valido</p>
+            <label>
+            <input name="valor" min="100000" max="10000000" placeholder="Valor del vehiculo: $" id="form-vvehiculo"/></label>
+            <p class="Error noneview" id="ErrorMCredit">El valor ingresado no es valido</p>
+            <select name="gnc" id="select-gnc" class="">
+                <option selected="true" disabled="disabled">El vehículo tiene GNC?</option>
+                <option value="0">No</option>
+                <option value="1">Si</option>
+            </select>
+            <p class="Error noneview" id="ErrorCuotas">El valor ingresado no es valido</p>
+          </form></div>
+          <input class="btncontinuar" type="button" value="Simular">
     </div>
 
     <div  class="hipervinculo" id="creditos"><br></div>

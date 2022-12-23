@@ -159,18 +159,22 @@ html {
     cursor: pointer; }
 
 .form {
-  background-color: #BFD2D2; }
+  background-color: #BFD2D2; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
   .form .cerrarform {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: flex-end;
     align-content: center; }
-  .form form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-family: 'Roboto Slab';
-    font-size: 18px; }
+    .form form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-family: 'Roboto Slab';
+      font-size: 18px; }
     .form form label {
       margin: 5px; }
       .form form label span {
@@ -201,7 +205,7 @@ html {
     .form form input:focus {
       border: 0.25px solid #444343;
       box-shadow: 0 8px 16px 0 #82b4c577, 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
-    .form form .btncontinuar {
+    .form .btncontinuar {
       height: 25px;
       width: 255px;
       font-size: 22px;
@@ -276,4 +280,21 @@ html {
   justify-content: space-evenly;
   height: 3rem;
   width: 18rem;
+}
+
+.hipervinculo1{
+  height: 150px;
+  background-color: #BFD2D2;
+}
+
+  .form .form1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-family: 'Roboto Slab';
+    font-size: 18px; }
+
+.btncontinuar:hover {
+  background-color: #00ba8f;
+  cursor: pointer;
 }
