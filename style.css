@@ -122,7 +122,7 @@ html {
   align-items: flex-end;
   margin-right: 25px; }
   .ContFiltro .filtronone {
-    display: none; }
+    display: none;}
   .ContFiltro .filterview {
     display: inline; }
   .ContFiltro .titulo-filter {
@@ -134,8 +134,8 @@ html {
     font-size: 28px;
     font-family: 'Roboto Slab';
     display: flex;
-    width: 150px;
     justify-items: center;
+    width: 150px;
     align-content: center;
     cursor: pointer; }
   .ContFiltro ul {
@@ -157,21 +157,22 @@ html {
     cursor: pointer; }
 
 .form {
-  background-color: #BFD2D2;
+  background-color: #BFD2D2; 
   display: flex;
   flex-direction: column;
-  align-items: center; }
+  align-items: center;
+}
   .form .cerrarform {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: flex-end;
     align-content: center; }
-  .form form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-family: 'Roboto Slab';
-    font-size: 18px; }
+    .form form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-family: 'Roboto Slab';
+      font-size: 18px; }
     .form form label {
       margin: 5px; }
       .form form label span {
@@ -184,19 +185,6 @@ html {
       font-size: 18px;
       border: 0.25px solid #444343;
       border-radius: 8px; }
-      .form form input .btncontinuar {
-        height: 25px;
-        width: 255px;
-        font-size: 22px;
-        border: 0.25px solid #444343;
-        border-radius: 8px;
-        margin-top: 10px;
-        background-color: #008CBA;
-        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        height: 3rem; }
-      .form form input .btncontinuar:hover {
-        background-color: #00ba8f;
-        cursor: pointer; }
     .form form select {
       height: 3rem;
       width: 255px;
@@ -215,21 +203,16 @@ html {
     .form form input:focus {
       border: 0.25px solid #444343;
       box-shadow: 0 8px 16px 0 #82b4c577, 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
-
-.btncontinuar {
-  height: 25px;
-  width: 255px;
-  font-size: 22px;
-  border: 0.25px solid #444343;
-  border-radius: 8px;
-  margin-top: 10px;
-  background-color: #008CBA;
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  height: 3rem; }
-
-.btncontinuar:hover {
-  background-color: #00ba8f;
-  cursor: pointer; }
+    .form .btncontinuar {
+      height: 25px;
+      width: 255px;
+      font-size: 22px;
+      border: 0.25px solid #444343;
+      border-radius: 8px;
+      margin-top: 10px;
+      background-color: #008CBA;
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      height: 3rem; }
 
 .conteinerCard {
   display: flex;
@@ -263,84 +246,106 @@ html {
   transform: translateY(-15px);
   box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2); }
 
-.view {
-  display: inline !important; }
 
-.noneview {
-  display: none !important; }
-
-.Error {
+.view{
+  display: inline !important;
+}
+.noneview{
+  display: none !important;
+}
+.Error{
   margin-top: 5px;
   margin-bottom: 5px;
   font-size: 12px;
-  color: rgba(255, 0, 0, 0.747); }
+  color: rgba(255, 0, 0, 0.747);
+}
 
-.ErrorInput {
-  box-shadow: rgba(255, 0, 0, 0.747) 1px 0 7px; }
+.ErrorInput{
+  box-shadow: rgba(255, 0, 0, 0.747) 1px 0 7px;
+}
 
-.element-filter {
+.element-filter{
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   align-content: center;
-  margin-top: 10px; }
-  .element-filter div {
+  margin-top: 10px;
+}
+
+.element-filter div{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  height: 3rem;
+  width: 18rem;
+}
+
+.hipervinculo1{
+  height: 150px;
+  background-color: #BFD2D2;
+}
+
+  .form .form1 {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
-    height: 3rem;
-    width: 18rem; }
+    justify-content: center;
+    font-family: 'Roboto Slab';
+    font-size: 18px; }
 
+.btncontinuar:hover {
+  background-color: #00ba8f;
+  cursor: pointer;
+}
 .window-notice {
-  background: rgba(33, 41, 52, 0.85);
+  background: rgba(33, 41, 52, .85);
   left: 0;
   bottom: 0;
   right: 0;
   top: 0;
   display: flex;
   position: fixed;
-  z-index: 999; }
-  .window-notice .content {
-    background: white;
-    border-radius: 2px;
-    box-shadow: 0 1px 3px rgba(33, 41, 52, 0.75);
-    box-sizing: content-box;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: auto;
-    max-width: 600px;
-    min-width: 320px !important;
-    overflow: hidden;
-    position: relative;
-    width: 100%;
-    padding: 2rem;
-    font-size: 1.3rem;
-    border-radius: 15px; }
-    .window-notice .content .btnwindows {
-      font-size: 1em;
-      cursor: pointer;
-      margin-top: 2em;
-      margin-right: .75em;
-      height: 2em;
-      width: 6em;
-      background-color: #008CBA;
-      border: .01em solid black;
-      border-radius: .4em; }
-    .window-notice .content .btnwindows-si:hover {
-      background-color: #00ba8f; }
-    .window-notice .content .btnwindows-no:hover {
-      background-color: #ba0000; }
-    .window-notice .content .content-text p {
-      text-align: center; }
+  z-index: 999;
+}
 
-.form .form1 {
+.window-notice .content {
+  background: rgb(255, 255, 255);
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(33, 41, 52, .75);
+  box-sizing: content-box;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  font-family: 'Roboto Slab';
-  font-size: 18px; }
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  max-width: 600px;
+  min-width: 320px !important;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  padding: 2rem;
+  font-size: 1.3rem;
+  border-radius: 15px;
+}
 
-.hipervinculo1 {
-  height: 150px;
-  background-color: #BFD2D2; }
+.btnwindows{
+  font-size: 1em;
+  cursor: pointer;
+  margin-top: 2em;
+  margin-right: .75em;
+  height: 2em;
+  width: 6em;
+  background-color: #008CBA;
+  border: .01em solid black;
+  border-radius: .4em;
+}
+
+.btnwindows-si:hover{
+  background-color: #00ba8f
+}
+
+.btnwindows-no:hover{
+  background-color: #ba0000
+}
+
+.content-text p{
+  text-align: center;
+}

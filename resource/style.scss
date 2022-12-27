@@ -1,3 +1,13 @@
+// Variables 
+$color-1: #C8D2BF;
+$color-2: #d2bfbf85;
+$color-3: #BFD2D2;
+$color-4: #C8BFD2;
+$color-5: #00000073;
+$sombra: 25px 15px 20px rgba(0, 0, 0, 0.568);
+$med1: 3px;
+$med2: 2px;
+
 *{
     margin: 0;
     padding: 0;  
@@ -13,16 +23,6 @@ html{
    height: 80px;
    background-color: $color-3;
 }
-
-// Variables 
-$color-1: #C8D2BF;
-$color-2: #d2bfbf85;
-$color-3: #BFD2D2;
-$color-4: #C8BFD2;
-$color-5: #00000073;
-$sombra: 25px 15px 20px rgba(0, 0, 0, 0.568);
-$med1: 3px;
-$med2: 2px;
 
 // Nav
 
@@ -243,6 +243,21 @@ $med2: 2px;
             font-size: 18px;
             border: .25px solid rgb(68, 67, 67);
             border-radius: 8px;
+            .btncontinuar{
+                height: 25px;
+                width: 255px;
+                font-size: 22px;
+                border: 0.25px solid #444343;
+                border-radius: 8px;
+                margin-top: 10px;
+                background-color: #008CBA;
+                box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                height: 3rem; 
+                }
+                .btncontinuar:hover {
+                    background-color: #00ba8f;
+                    cursor: pointer;
+                  }
         }
         select{
             height: 3rem;
@@ -268,22 +283,23 @@ $med2: 2px;
             border: .25px solid rgb(68, 67, 67);
             box-shadow: 0 8px 16px 0 #82b4c577, 0 6px 20px 0 rgba(0,0,0,0.19);
         }
-        .btncontinuar{
-            height: 25px;
-            width: 255px;
-            font-size: 22px;
-            border: 0.25px solid #444343;
-            border-radius: 8px;
-            margin-top: 10px;
-            background-color: #008CBA;
-            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            height: 3rem;
-        }
-        .btncontinuar:hover {
-            background-color: #00ba8f;
-            cursor: pointer;
-          }
     }
+}
+
+.btncontinuar{
+    height: 25px;
+    width: 255px;
+    font-size: 22px;
+    border: 0.25px solid #444343;
+    border-radius: 8px;
+    margin-top: 10px;
+    background-color: #008CBA;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    height: 3rem; 
+}
+.btncontinuar:hover {
+    background-color: #00ba8f;
+    cursor: pointer;
 }
 
 
@@ -409,4 +425,16 @@ $med2: 2px;
         }
     }
 
+}
+
+.form .form1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-family: 'Roboto Slab';
+    font-size: 18px; 
+}
+.hipervinculo1{
+    height: 150px;
+    background-color: #BFD2D2;
 }
