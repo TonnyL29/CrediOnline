@@ -415,41 +415,53 @@ const VTAOS = ["5P 1.4 TSI 250 COMFORTLINE TIPT","5P 1.4 TSI 250 HIGHLINE TIPT",
 let Smarca = document.getElementById('select-marca');
 let Smodelo = document.getElementById('select-modelo');
 let Sversion = document.getElementById('select-version');
-let controlcarga = Smodelo.value;
+let CC = 0;
 
-function CargarSelect (a){
-    for(let i = 0; i < a.length; i++){
-        Smodelo.innerHTML += `<option value="${i}">${a[i]}</option>`;
-        console.log (`${i} ---> ${a[i]}`);
+function CargarSelect (a , b){
+    let Ar = a.length;
+    borrarSelect(CC, b);
+    for(let i = 0; i < Ar; i++){
+        b.innerHTML += `<option value="${i}">${a[i]}</option>`;
+        CC++;
     }
 }
+
+function borrarSelect(a, b){
+    if(a != 0){
+        for(let i = b.options.length; i >= 0; i--){
+            b.remove(i);
+        }
+    }
+}
+
 
 Smarca.onchange = () =>{
     let x = Smarca.value;
     switch (x){
         case "0":
-            CargarSelect(modelosCH);
+            CargarSelect(modelosCH, Smodelo);
             break;
         case "1":
-            CargarSelect(modelosCI);
+            CargarSelect(modelosCI, Smodelo);
             break;
         case "2":
-            CargarSelect(modelosFI);
+            CargarSelect(modelosFI, Smodelo);
             break;
         case "3":
-            CargarSelect(modelosDG);
+            CargarSelect(modelosDG, Smodelo);
             break;
         case "4":
-            CargarSelect(modelosFO);
+            CargarSelect(modelosFO, Smodelo);
             break;
-        case 5:
-            CargarSelect(modelosPE);
+        case "5":
+            CargarSelect(modelosPE, Smodelo);
             break;
-        case 6:
-            CargarSelect(modelosRE);
+        case "6":
+            CargarSelect(modelosRE, Smodelo);
             break;
-        case 7:
-            CargarSelect(modelosVW);
+        case "7":
+            CargarSelect(modelosVW, Smodelo);
             break;
     }
 }
+
