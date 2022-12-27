@@ -415,10 +415,11 @@ const VTAOS = ["5P 1.4 TSI 250 COMFORTLINE TIPT","5P 1.4 TSI 250 HIGHLINE TIPT",
 let Smarca = document.getElementById('select-marca');
 let Smodelo = document.getElementById('select-modelo');
 let Sversion = document.getElementById('select-version');
+let controlcarga = Smodelo.value;
 
 function CargarSelect (a){
     for(let i = 0; i < a.length; i++){
-        Smodelo.innerHTML = `<option value="${i}">${a[i]}</option>`;
+        Smodelo.innerHTML += `<option value="${i}">${a[i]}</option>`;
         console.log (`${i} ---> ${a[i]}`);
     }
 }
@@ -434,7 +435,8 @@ Smarca.onchange = () =>{
             break;
         case "2":
             CargarSelect(modelosFI);
-        case 3:
+            break;
+        case "3":
             CargarSelect(modelosDG);
             break;
         case "4":
@@ -444,12 +446,9 @@ Smarca.onchange = () =>{
             CargarSelect(modelosPE);
             break;
         case 6:
-            CargarSelect(modelosPE);
-            break;
-        case 7:
             CargarSelect(modelosRE);
             break;
-        case 8:
+        case 7:
             CargarSelect(modelosVW);
             break;
     }
