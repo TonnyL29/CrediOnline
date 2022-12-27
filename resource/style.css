@@ -24,7 +24,7 @@ html {
   background-color: #C8BFD2;
   box-shadow: 25px 15px 20px rgba(0, 0, 0, 0.568);
   position: fixed;
-  z-index: 99999 !important; }
+  z-index: 998 !important; }
   .contenedorNav .itemNav {
     margin: 7px;
     width: 100px;
@@ -136,8 +136,6 @@ html {
     display: flex;
     justify-items: center;
     width: 150px;
-    justify-items: center;
-    align-items: center;
     align-content: center;
     cursor: pointer; }
   .ContFiltro ul {
@@ -297,4 +295,57 @@ html {
 .btncontinuar:hover {
   background-color: #00ba8f;
   cursor: pointer;
+}
+.window-notice {
+  background: rgba(33, 41, 52, .85);
+  left: 0;
+  bottom: 0;
+  right: 0;
+  top: 0;
+  display: flex;
+  position: fixed;
+  z-index: 999;
+}
+
+.window-notice .content {
+  background: rgb(255, 255, 255);
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(33, 41, 52, .75);
+  box-sizing: content-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  max-width: 600px;
+  min-width: 320px !important;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  padding: 2rem;
+  font-size: 1.3rem;
+  border-radius: 15px;
+}
+
+.btnwindows{
+  font-size: 1em;
+  cursor: pointer;
+  margin-top: 2em;
+  margin-right: .75em;
+  height: 2em;
+  width: 6em;
+  background-color: #008CBA;
+  border: .01em solid black;
+  border-radius: .4em;
+}
+
+.btnwindows-si:hover{
+  background-color: #00ba8f
+}
+
+.btnwindows-no:hover{
+  background-color: #ba0000
+}
+
+.content-text p{
+  text-align: center;
 }
