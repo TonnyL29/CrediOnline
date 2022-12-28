@@ -505,4 +505,7 @@ Smodelo.onchange = () =>{
         }
     }
     console.log(y);
+    let VV = vehiculos[x][y]
+
+    console.log(Object.values(VV));
 }
