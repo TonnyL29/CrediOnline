@@ -376,6 +376,22 @@ const modelosFO = ["BRONCO SPORT","ECOSPORT KD","FIESTA KD","FOCUS KD","KA","RAN
 const modelosPE = ["208","308","408","2008"];
 const modelosRE = ["ALASKAN PICK-UP","CAPTUR","DUSTER","DUSTER OROCH PICK-UP"];
 const modelosVW = ["AMAROK PICK-UP","NIVUS","GOL TREND","GOLF","TAOS"];
+
+const vehiculos = {
+    CHEVROLET : {
+        Cruze : ["4P 1.8 LT","4P 1.8 LTZ","4P 1.8 LTZ AT","4P 2.0 DSL LT AT","4P 2.0 DSL LTZ AT","4P 1.4 T LT MT","4P 1.4 T LTZ MT","4P 1.4 T LTZ AT","4P 1.4 T LTZ PLUS AT","4P 1.4 T MIDNIGHT 6AT","4P 1.4 T PREMIER 6AT","5P 1.8 LT,5P 1.8 LTZ","5P 1.8 LTZ AT","5P 2.0 DSL LTZ AT","5P 1.4 T LT MT","5P 1.4 T LTZ MT","5P 1.4 T LTZ AT","5P 1.4 T LTZ PLUS AT","5P 1.4 T PREMIER AT","5P 1.4 T PREMIER 6AT"],
+        Equinox: ["5P 1.5 T 6AT LT 2WD","5P 1.5 T 6AT PREMIER AWD","5P 1.5 T 6AT RS 2WD"],
+        S10: ["CS 2.8 CTDI LS 4X2 CV180","CS 2.8 CTDI LS 4X4 CV180","DC 2.8 CTDI LS 4X2 CV180","DC 2.8 CTDI LT 4X2 CV180","DC 2.8 CTDI LTZ 4X2 CV180","DC 2.8 CTDI LS 4X4 CV180","DC 2.8 CTDI LT 4X4 CV180","DC 2.8 CTDI LTZ 4X4 AT CV180","DC 2.8 TD HC 4X4 AT"],
+        TRAILBLAZER: ["5P 2.8 CTDI 4X4 LT AT","5P 2.8 CTDI 4X4 LTZ AT","5P 2.8 TD 4X4 PREMIER 7A 6AT"]
+    },
+    CITROEN : {
+        C4CACTUS: ["5P 1.2 T 6AT","5P 1.6 VTI 115 LIVE","5P 1.6 VTI 115 FEEL","5P 1.6 VTI 115 FEEL PACK","5P 1.6 VTI 115 FEEL PACK EAT6","5P 1.6 VTi 115 ORIGINS","5P 1.6 THP 165 SHINE EAT6","5P 1.6 THP 165 SHINE EAT6 BITONO","5P 1.6 VTI 115 C-SERIES","5P 1.6 VTI 115 C-SERIES EAT6","5P 1.6 VTI 115 RIP CURL","5P 1.6 VTI 115 RIP CURL  EAT6"],
+        C4LOUNG : ["4P 1.6 VTi 115 LIVE AM19","4P 1.6 THP 165 MT6 FEEL AM19","4P 1.6 THP 165 AT6 FEEL AM19","4P 1.6 THP 165 MT6 FEEL PACK AM19","4P 1.6 THP 165 AT6 SHINE AM19","4P 1.6 HDi 115 MT6 FEEL PACK AM19","4P 1.6 HDi 115 MT6 ORIGINS"], 
+        C5AIRCROSS:["5P 1.6 THP 165CV EAT6 FELL PACK"],
+        CELYSEE : ["4P 1.6 VTi 115 LIVE","4P 1.6 VTi 115 FELL","4P 1.6 VTi 115 6AT SHINE","4P 1.6 HDi 92 FEEL"]
+    }
+}
+
 const VCRUZE = ["4P 1.8 LT","4P 1.8 LTZ","4P 1.8 LTZ AT","4P 2.0 DSL LT AT","4P 2.0 DSL LTZ AT","4P 1.4 T LT MT","4P 1.4 T LTZ MT","4P 1.4 T LTZ AT","4P 1.4 T LTZ PLUS AT","4P 1.4 T MIDNIGHT 6AT","4P 1.4 T PREMIER 6AT","5P 1.8 LT,5P 1.8 LTZ","5P 1.8 LTZ AT","5P 2.0 DSL LTZ AT","5P 1.4 T LT MT","5P 1.4 T LTZ MT","5P 1.4 T LTZ AT","5P 1.4 T LTZ PLUS AT","5P 1.4 T PREMIER AT","5P 1.4 T PREMIER 6AT"];
 const VEQUINOX = ["5P 1.5 T 6AT LT 2WD","5P 1.5 T 6AT PREMIER AWD","5P 1.5 T 6AT RS 2WD"];
 const VS10 = ["CS 2.8 CTDI LS 4X2 CV180","CS 2.8 CTDI LS 4X4 CV180","DC 2.8 CTDI LS 4X2 CV180","DC 2.8 CTDI LT 4X2 CV180","DC 2.8 CTDI LTZ 4X2 CV180","DC 2.8 CTDI LS 4X4 CV180","DC 2.8 CTDI LT 4X4 CV180","DC 2.8 CTDI LTZ 4X4 AT CV180","DC 2.8 TD HC 4X4 AT"];
@@ -434,10 +450,13 @@ function borrarSelect(a, b){
     }
 }
 
+let Vmarca = Smarca.value;
+let Vmodelo = Smodelo.value;
+
 
 Smarca.onchange = () =>{
-    let x = Smarca.value;
-    switch (x){
+    Vmarca = Smarca.value;
+    switch (Vmarca){
         case "0":
             CargarSelect(modelosCH, Smodelo);
             break;
@@ -465,4 +484,25 @@ Smarca.onchange = () =>{
     }
 }
 
-
+Smodelo.onchange = () =>{
+    Vmodelo = Smodelo.value;
+    Vmarca; 
+    let x = '';
+    let y = '';
+    let mod = Object.keys(vehiculos);
+    for(let i = 0; i < mod.length; i++){
+        if(Vmarca == i){
+            x = mod[i];
+            break;
+        }
+    }
+    console.log(x)
+    let vers = Object.keys(vehiculos[x]);
+    for(let i = 0; i < vers.length; i++){
+        if(Vmodelo == i){
+            y = vers[i];
+            break
+        }
+    }
+    console.log(y);
+}
