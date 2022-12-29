@@ -74,17 +74,17 @@
             </select>
             <p class="Error noneview" id="ErrorSex">El valor ingresado no es valido</p>
             <label><span></span>
-            <input type="credito" name="MCredit" min="100000" max="10000000" placeholder="Monto del credito: $" id="form-mcredit"/></label>
+            <input type="number" name="MCredit" min="100000" max="10000000" placeholder="Monto del credito: $" id="form-mcredit"/></label>
             <p class="Error noneview" id="ErrorMCredit">El valor ingresado no es valido</p>
-            <select name="cuotas" id="select-cuota" class="">
-                <option selected="true" disabled="disabled">Cuotas</option>
-                <option value="todo">Todas las cuotas disponibles</option>
-                <option value="12">12 cuotas</option>
-                <option value="18">18 cuotas</option>
-                <option value="24">24 cuotas</option>
-                <option value="36">36 cuotas</option>
-                <option value="48">48 cuotas</option>
-                <option value="60">60 cuotas</option>
+            <select name="cuota" id="select-cuota">
+                <option value="0" selected="true" disabled="disabled">Cuotas</option>
+                <option value="1">Todas las cuotas disponibles</option>
+                <option value="2">12 cuotas</option>
+                <option value="3">18 cuotas</option>
+                <option value="4">24 cuotas</option>
+                <option value="5">36 cuotas</option>
+                <option value="6">48 cuotas</option>
+                <option value="7">60 cuotas</option>
             </select>
             <p class="Error noneview" id="ErrorCuotas">El valor ingresado no es valido</p>
           </form>
@@ -109,7 +109,9 @@
                 </select></label>
             <p class="Error noneview" id="ErrorLastName">El valor ingresado no es valido</p>
             <label>
-                <select name="version" id="select-version"></select></label>
+                <select name="version" id="select-version">
+                    <option selected="true" disabled="disabled">Seleccione la version</option>
+                </select></label>
             <p class="Error noneview" id="ErrorDni">El valor ingresado no es valido</p>
             <label>
                 <input name="anio" min="2012" max="2022" id="anio" placeholder="Año del vehiculo"></input></label>

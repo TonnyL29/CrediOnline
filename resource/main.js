@@ -131,7 +131,7 @@ let mensajeErrorLastName = document.getElementById('ErrorLastName');
 let mensajeErrorDni = document.getElementById('ErrorDni');
 let mensajeErrorSex = document.getElementById('ErrorSex');
 let mensajeErrorMCredit = document.getElementById('ErrorMCredit');
-let mensajeErrorCuota = document.getElementById('ErrorCuota');
+let mensajeErrorCuota = document.getElementById('ErrorCuotas');
 let btncontinuar = document.getElementById('btncontinuar');
 
     //Capturar elementos del formulario y validacion
@@ -139,6 +139,7 @@ let btncontinuar = document.getElementById('btncontinuar');
 let nombre = document.getElementById('form-nombre');
 nombre.onblur = () =>{
     let x = nombre.value;
+    localStorage.setItem("nombre", x)
     if(x == ''){
         mensajeErrorName.classList.remove('noneview');
         mensajeErrorName.classList.add('view');
@@ -152,6 +153,7 @@ nombre.onblur = () =>{
 let apellido = document.getElementById('form-apellido');
 apellido.onblur = () =>{
     let x = apellido.value;
+    localStorage.setItem("apellido",x)
     if(x == ''){
         mensajeErrorLastName.classList.remove('noneview');
         mensajeErrorLastName.classList.add('view');
@@ -166,6 +168,7 @@ apellido.onblur = () =>{
 let dni = document.getElementById('form-dni');
 dni.onblur = () =>{
     let x = parseInt(dni.value);
+    localStorage.setItem("dni",x)
     if(isNaN(x)){
         mensajeErrorDni.classList.remove('noneview');
         mensajeErrorDni.classList.add('view');
@@ -180,6 +183,7 @@ dni.onblur = () =>{
 let sexo = document.getElementById('select-sexo');
 sexo.onblur = () =>{
     let x = sexo.value;
+    localStorage.setItem("sexo",x)
     if(x == 0){
         mensajeErrorSex.classList.remove('noneview');
         mensajeErrorSex.classList.add('view');
@@ -193,6 +197,7 @@ sexo.onblur = () =>{
 let mcredit = document.getElementById('form-mcredit');
 mcredit.onblur = () =>{
     let x = mcredit.value;
+    localStorage.setItem("mcredit", x)
     if(mcredit > 100000 && mcredit < 6000000){
         mensajeErrorMCredit.classList.remove('noneview');
         mensajeErrorMCredit.classList.add('view');
@@ -205,17 +210,18 @@ mcredit.onblur = () =>{
 
     }
 }
-let selectcuota = document.getElementById('select-cuota');
-selectcuota.onblur = () =>{
-    let x = selectcuota.value;
-    if(x == ''){
+let selectcuot = document.getElementById('select-cuota');
+selectcuot.onblur = () =>{
+    let x = selectcuot.value;
+    localStorage.setItem("Cuotas",x)
+    if(x == 0){
         mensajeErrorCuota.classList.remove('noneview');
         mensajeErrorCuota.classList.add('view');
-        selectcuota.classList.add('ErrorInput');
+        selectcuot.classList.add('ErrorInput');
     }else{
         mensajeErrorCuota.classList.remove('view');
         mensajeErrorCuota.classList.add('noneview');
-        selectcuota.classList.remove('ErrorInput');
+        selectcuot.classList.remove('ErrorInput');
     }
 } 
 
@@ -456,6 +462,7 @@ let Vmodelo = Smodelo.value;
 
 Smarca.onchange = () =>{
     Vmarca = Smarca.value;
+    localStorage.setItem("marca", Vmarca)
     switch (Vmarca){
         case "0":
             CargarSelect(modelosCH, Smodelo);
@@ -486,6 +493,7 @@ Smarca.onchange = () =>{
 
 Smodelo.onchange = () =>{
     Vmodelo = Smodelo.value;
+    localStorage.setItem("modelo",Vmodelo)
     Vmarca; 
     let x = '';
     let y = '';
@@ -505,7 +513,27 @@ Smodelo.onchange = () =>{
         }
     }
     console.log(y);
-    let VV = vehiculos[x][y]
-
-    console.log(Object.values(VV));
+    let VV = vehiculos[x][y];
+    localStorage.setItem("version", VV);
+    CargarSelect(VV, Sversion);
 }
+
+
+// LocalStorage
+let n = localStorage.getItem("nombre");
+let a = localStorage.getItem("apellido");
+let d = localStorage.getItem("dni");
+let s = localStorage.getItem("sexo");
+let mc = localStorage.getItem("mcredit");
+let cuot = localStorage.getItem("Cuotas")
+let m = localStorage.getItem("marca")
+let mm = localStorage.getItem("modelo")
+
+nombre.value = n;
+apellido.value = a;
+dni.value = d;
+sexo.value = s;
+mcredit.value = mc;
+selectcuot.value = cuot;
+Smarca.value = m;
+
