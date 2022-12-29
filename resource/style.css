@@ -340,6 +340,10 @@ html {
   justify-content: center;
   font-family: 'Roboto Slab';
   font-size: 18px; }
+  .form .form1 input {
+    text-align: center; }
+  .form .form1 select {
+    text-align: center; }
 
 .hipervinculo1 {
   height: 150px;

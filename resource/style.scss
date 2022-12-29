@@ -433,6 +433,12 @@ html{
     justify-content: center;
     font-family: 'Roboto Slab';
     font-size: 18px; 
+    input{
+        text-align: center;
+    }
+    select{
+        text-align: center;
+    }
 }
 .hipervinculo1{
     height: 150px;
