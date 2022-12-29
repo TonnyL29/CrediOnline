@@ -262,11 +262,11 @@ selectcuot.onblur = () =>{
         mcredit.classList.add('ErrorInput');
         return;
     }
-    selectcuota.value;
-    if(selectcuota > 100000){
+    selectcuot.value;
+    if(selectcuot > 100000){
         mensajeErrorCuota.classList.remove('noneview');
         mensajeErrorCuota.classList.add('view');
-        selectcuota.classList.add('ErrorInput');
+        selectcuot.classList.add('ErrorInput');
         return;
     }
     this.submit();
