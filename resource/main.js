@@ -230,7 +230,7 @@ selectcuot.onblur = () =>{
 btncontinuar.onclick = (e) =>{
     e.preventDefault();
     validarFormulario();
-    console.log('Se detecto el evento');
+
 }
 
 const valForm = [];
@@ -256,7 +256,7 @@ const valForm = [];
     }
     let montoC = mcredit.value;
     if (montoC != ""){
-        valForm.push(montoC)
+        valForm.push(parseInt(montoC));
     }else if (montoC == ""){
         mensajeErrorMCredit.classList.remove('noneview');
         mensajeErrorMCredit.classList.add('view');
@@ -272,7 +272,7 @@ const valForm = [];
         mensajeErrorCuota.classList.add('view');
         selectcuot.classList.add('ErrorInput');
     }else {
-        valForm.push(SC);
+        valForm.push(parseInt(SC));
     }
  }
 // Evento para mostrar/ocultar filtro
@@ -538,20 +538,64 @@ const LS = () =>{
 
 
 let contCards = document.getElementById('conteinerCard');
+let cards1 = document.getElementById('card1');
+let cards2 = document.getElementById('card2');
+let cards3 = document.getElementById('card3');
 
-CalcCreditIFHCBC(5000000);
+
+// CalcCreditIFHCBC();
 // ^^ Array que almacena el valor de las vuotas de la linea inclusion financiera ValorCuotaIFHCBC
-CalcCreditLCSR()
+// CalcCreditLCSR()
 // ^^ Array que almacena el valor de las vuotas de la linea convencional Santander ValorCuotaLCSR
-CalcCreditLISR()
+// CalcCreditLISR()
 // ^^ Array que almacena el valor de las vuotas de la linea inclusion financiera ValorCuotaLISR
 // Array que contiene el monto a financiar y la cantidad de cuotas (string). valForm
 
-function CargarCardCuotas (b){
-    b.innerHTML += `<div class="cards">
-    <div class="imgCard"><img src="resource/media/logo-Santander.png" alt=""></div>
-    <div class="txtCard"><p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum laboriosam ut, dolorum iste exercitationem atque! Excepturi velit, mollitia, provident porro voluptate unde aut fugit, sint corrupti impedit quis. Corporis, minus! </p></div>
-    <div class="valor"><b>$ 2.022.598</b></div>
-    </div>`
+function CCuotas (a){
+    let x = a[0];
+    let y = a[1];
+    let ar =[];
+    if(y == 0){
+        CalcCreditIFHCBC(x);
+        CalcCreditLCSR(x);
+        CalcCreditLISR(x);
+        return true;
+    }else {
+        CalcCreditIFHCBC(x);
+        CalcCreditLCSR(x);
+        CalcCreditLISR(x);
+        ar.push(ValorCuotaIFHCBC[y]);
+        ar.push(ValorCuotaLCSR[y]);
+        ar.push(ValorCuotaLISR[y]); 
+        return ar;
+    }
+}
+
+
+
+
+function CardCuotas (a){
+    let x = a[0];
+    let y = a[1];
+    let c = 12;
+    CalcCreditIFHCBC(x)
+    CalcCreditLCSR(x)
+    CalcCreditLISR(x)
+    cards1.classList.add('noneview');
+    cards2.classList.add('noneview');
+    cards3.classList.add('noneview');
+    if(y == 0){
+        for(let i = 0; i< ValorCuotaIFHCBC.length ; i++){
+            contCards.innerHTML += `<div class="cards"><div class="imgCard"><img src="resource/media/logo-Santander.png" alt=""></div><div class="txtCard"><p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum laboriosam ut, dolorum iste exercitationem atque! Excepturi velit, mollitia, provident porro voluptate unde aut fugit, sint corrupti impedit quis. Corporis, minus! </p></div><div class="valor"><b>$ ${ValorCuotaIFHCBC[i]}</b></div></div>`;
+            }
+            for(let i = 0; i< ValorCuotaLCSR.length ; i++){
+                contCards.innerHTML += `<div class="cards"><div class="imgCard"><img src="resource/media/logo-Santander.png" alt=""></div><div class="txtCard"><p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum laboriosam ut, dolorum iste exercitationem atque! Excepturi velit, mollitia, provident porro voluptate unde aut fugit, sint corrupti impedit quis. Corporis, minus! </p></div><div class="valor"><b>$ ${ValorCuotaLCSR[i]}</b></div></div>`;
+                }
+        }
+    // b.innerHTML += `<div class="cards">
+    // <div class="imgCard"><img src="resource/media/logo-Santander.png" alt=""></div>
+    // <div class="txtCard"><p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum laboriosam ut, dolorum iste exercitationem atque! Excepturi velit, mollitia, provident porro voluptate unde aut fugit, sint corrupti impedit quis. Corporis, minus! </p></div>
+    // <div class="valor"><b>$ 2.022.598</b></div>
+    // </div>`
 }
 
