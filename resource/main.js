@@ -2,7 +2,7 @@
 
 const comision = 1.0815;
 
-// constantes de lina de inclusion financiara Santander Rio
+// constantes de linea de inclusion financiara Santander Rio
 const LISR = {
     sinc12: 122.55,
     sinc18: 95.24,
@@ -227,51 +227,54 @@ selectcuot.onblur = () =>{
 
  // funcion para valirdar el formulario antes del submit
 
- document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById("formulario").addEventListener('submit', validarFormulario); 
- })
+btncontinuar.onclick = (e) =>{
+    e.preventDefault();
+    validarFormulario();
+    console.log('Se detecto el evento');
+}
 
- function validarFormulario(evento) {
-    evento.preventDefault();
-    nombre.value;
-    if(nombre.length == 0) {
+const valForm = [];
+
+ function validarFormulario() {
+    let Snombre = nombre.value;
+    if(Snombre.length == 0) {
         mensajeErrorName.classList.remove('noneview');
         mensajeErrorName.classList.add('view');
         nombre.classList.add('ErrorInput');
-      return;
     }
-    apellido.value;
-    if (apellido.length > 0 && apellido.length < 20) {
+    let Sapellido = apellido.value;
+    if(Sapellido.length == 0) {
         mensajeErrorLastName.classList.remove('noneview');
         mensajeErrorLastName.classList.add('view');
         apellido.classList.add('ErrorInput');
-      return;
     }
-    dni.value;
-    if (dni.parseInt > 1000000 && dni.parseInt < 99999999){
+    let Sdni = dni.value;
+    if (parseInt(Sdni) < 1000000 || parseInt(Sdni) > 99999999){
         mensajeErrorDni.classList.remove('noneview');
         mensajeErrorDni.classList.add('view');
         dni.classList.add('ErrorInput');
-        return;
     }
-
-    mcredit.value;
-    if(mcredit > 100000 && mcredit < 6000000){
+    let montoC = mcredit.value;
+    if (montoC != ""){
+        valForm.push(montoC)
+    }else if (montoC == ""){
         mensajeErrorMCredit.classList.remove('noneview');
         mensajeErrorMCredit.classList.add('view');
         mcredit.classList.add('ErrorInput');
-        return;
+    }else if(parseInt(montoC) < 90000 || parseInt(montoC) > 6000000){
+        mensajeErrorMCredit.classList.remove('noneview');
+        mensajeErrorMCredit.classList.add('view');
+        mcredit.classList.add('ErrorInput');
     }
-    selectcuot.value;
-    if(selectcuot > 100000){
+    let SC = selectcuot.value;
+    if(SC == 0){
         mensajeErrorCuota.classList.remove('noneview');
         mensajeErrorCuota.classList.add('view');
         selectcuot.classList.add('ErrorInput');
-        return;
+    }else {
+        valForm.push(SC);
     }
-    this.submit();
-  }
-
+ }
 // Evento para mostrar/ocultar filtro
 
 let valorfilter = false;
@@ -387,7 +390,7 @@ const vehiculos = {
         CELYSEE : ["4P 1.6 VTi 115 LIVE","4P 1.6 VTi 115 FELL","4P 1.6 VTi 115 6AT SHINE","4P 1.6 HDi 92 FEEL"]
     },
     FIAT:{
-        VARGO: ["5P 1.3 DRIVE GSE","5P 1.3 DRIVE GSE PACK CONECTIVIDAD","5P 1.8 PRECISION","5P 1.8 PRECISION PACK PREMIUM","5P 1.8 PRECISION PACK TECNHOLOGY","5P 1.8 PRECISION 6AT","5P 1.8 PRECISION PACK PREMIUM 6AT","5P 1.8 PRECISION PACK TECNHOLOGY 6AT","5P 1.8 HGT"],
+        ARGO: ["5P 1.3 DRIVE GSE","5P 1.3 DRIVE GSE PACK CONECTIVIDAD","5P 1.8 PRECISION","5P 1.8 PRECISION PACK PREMIUM","5P 1.8 PRECISION PACK TECNHOLOGY","5P 1.8 PRECISION 6AT","5P 1.8 PRECISION PACK PREMIUM 6AT","5P 1.8 PRECISION PACK TECNHOLOGY 6AT","5P 1.8 HGT"],
         CRONOS: ["4P 1.3 DRIVE GSE","4P 1.3 DRIVE GSE PACK CONECTIVIDAD","4P 1.8 PRECISION","4P 1.8 PRECISION PACK PREMIUM","4P 1.8 PRECISION PACK TECNHOLOGY","4P 1.8 PRECISION AT","4P 1.8 HGT PACK"],
         MOBI: ["5P 1.0 EASY","5P 1.0 EASY TOP","5P 1.0 EASY TOP LIVE ON","5P 1.0 WAY","5P 1.0 WAY LIVE ON","5P 1.0 LIKE"],
         TORO: ["DC 1.8 FREEDOM 4X2 6AT PACK SEG","DC 1.8 FREEDOM 4X2 6AT PACK SEG CHROME","DC 2.0 TD FREEDOM 4X2 6MT","DC 2.0 TD FREEDOM 4X4 6MT","DC 2.0 TD FREEDOM 4X4 6MT PACK XTREME","DC 2.0 TD FREEDOM 4X4 9AT","DC 2.0 TD FREEDOM 4X4 9AT PACK SEG","DC 2.0 TD FREEDOM 4X4 9AT NEW HOLLAN","DC 2.0 TD VOLCANO 4X4 9AT","DC 2.0 TD BLACKJACK 4X4 9AT","DC 2.0 TD VOLCANO 4X4 9AT PACK PREMIUM","DC 2.0 TD RANCH 4X4 9AT","DC 1.3 T VOLCANO 4X2 6AT","DC 2.0 16V TD MULTIJET ULTRA 4X4 9AT"]
@@ -533,4 +536,22 @@ const LS = () =>{
     }
 }
 
+
+let contCards = document.getElementById('conteinerCard');
+
+CalcCreditIFHCBC(5000000);
+// ^^ Array que almacena el valor de las vuotas de la linea inclusion financiera ValorCuotaIFHCBC
+CalcCreditLCSR()
+// ^^ Array que almacena el valor de las vuotas de la linea convencional Santander ValorCuotaLCSR
+CalcCreditLISR()
+// ^^ Array que almacena el valor de las vuotas de la linea inclusion financiera ValorCuotaLISR
+// Array que contiene el monto a financiar y la cantidad de cuotas (string). valForm
+
+function CargarCardCuotas (b){
+    b.innerHTML += `<div class="cards">
+    <div class="imgCard"><img src="resource/media/logo-Santander.png" alt=""></div>
+    <div class="txtCard"><p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum laboriosam ut, dolorum iste exercitationem atque! Excepturi velit, mollitia, provident porro voluptate unde aut fugit, sint corrupti impedit quis. Corporis, minus! </p></div>
+    <div class="valor"><b>$ 2.022.598</b></div>
+    </div>`
+}
 
