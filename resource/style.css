@@ -51,7 +51,7 @@ html {
   .contenedorNav .itemNav:hover p {
     opacity: 1; }
 
-.conteiner {
+.conteinerHome {
   display: grid;
   grid-column: auto;
   grid-template-areas: "img tx";
