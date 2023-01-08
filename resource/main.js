@@ -149,7 +149,7 @@ nombre.onblur = () =>{
         mensajeErrorName.classList.add('noneview');
         nombre.classList.remove('ErrorInput');
     }
-} 
+}
 let apellido = document.getElementById('form-apellido');
 apellido.onblur = () =>{
     let x = apellido.value;
@@ -225,13 +225,13 @@ selectcuot.onblur = () =>{
     }
 } 
 
- // funcion para valirdar el formulario antes del submit
-
-btncontinuar.onclick = (e) =>{
-    e.preventDefault();
-    validarFormulario();
-
+let vvehiculo = document.getElementById('form-vvehiculo');
+vvehiculo.onblur =() =>{
+    let x = vvehiculo.value;
+    localStorage.setItem("Vvehiculo",x)
 }
+
+ // funcion para valirdar el formulario antes del submit
 
 const valForm = [];
 
@@ -518,20 +518,14 @@ const LS = () =>{
             let s = localStorage.getItem("sexo");
             let mc = localStorage.getItem("mcredit");
             let cuot = localStorage.getItem("Cuotas");
-            let m = parseInt(localStorage.getItem("marca"));
-            let mm = parseInt(localStorage.getItem("modelo"));
+            let vvehic = localStorage.getItem("Vvehiculo");
             nombre.value = n;
             apellido.value = a;
             dni.value = d;
             sexo.value = s;
             mcredit.value = mc;
-            selectcuot.value = cuot;
-            /*Smarca.value = m;
-            let valMarca = Smarca.options[Smarca.selectedIndex].text;
-            let Mod = Object.keys(vehiculos[valMarca]);
-            console.log(Mod)
-            CargarSelect(Mod , Smodelo);*/
-            
+            selectcuot.value = cuot; 
+            vvehiculo.value = vvehic;        
         }
     }
 }
@@ -542,7 +536,7 @@ let cards1 = document.getElementById('card1');
 let cards2 = document.getElementById('card2');
 let cards3 = document.getElementById('card3');
 
-/* funcion para cargar los CARDS el argumento a recibe como parametro la cantidad de cuotas 
+/* funcion para cargar los CARDS, a recibe como parametro la cantidad de cuotas 
 0 todas las cuotas
 1 12 cuotas
 2 18 cuotas
@@ -563,7 +557,7 @@ function Cargarcc (a, b, c){
 
     let x = (c == 'S') ? 'resource/media/logo-Santander.png' : 'resource/media/logo-HSBC.png';
 
-    if(!a == 0){
+    if(a == 0){
         b.forEach(function (element, index) {
             flag = index;
             contCards.innerHTML += `<div class="cards col-4 align-self-center m-2" id="card${index}">
@@ -572,6 +566,17 @@ function Cargarcc (a, b, c){
             <div class="valor"><b>$ ${element}</b></div>
         </div>`
         });
+    }else{
+        b.forEach(function (element, index) {
+            flag = index;
+            if(index === a){
+            contCards.innerHTML += `<div class="cards col-4 align-self-center m-2" id="card${index}">
+            <div class="imgCard"><img src="${x}" alt=""></div>
+            <div class="txtCard"><p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum laboriosam ut, dolorum iste exercitationem atque! Excepturi velit, mollitia, provident porro voluptate unde aut fugit, sint corrupti impedit quis. Corporis, minus! </p></div>
+            <div class="valor"><b>$ ${element}</b></div>
+            </div>`
+            }
+        });   
     }
 }
 
@@ -580,5 +585,31 @@ function borrarCards(a){
         for(let i = contCards.children.length; i >= 0; i--){
             contCards.remove(i);
         }
+    }
+}
+
+function  valMcredit (a, b){
+   let calc =  a * 0.7;
+   let c = (calc >= b) ? true : false;
+   return c;
+}
+
+
+btncontinuar.onclick = (e) =>{
+    e.preventDefault();
+    validarFormulario();
+    if(!valMcredit(vvehiculo.value, mcredit.value)){
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'El valor del credito no puede superar el 70% del valor del vehículo',
+          })
+    }else{
+        CalcCreditIFHCBC(parseInt(mcredit.value)); 
+        CalcCreditLCSR(parseInt(mcredit.value));
+        CalcCreditLISR(parseInt(mcredit.value));
+        Cargarcc(parseInt(selectcuot.value),ValorCuotaIFHCBC,'H');
+        Cargarcc(parseInt(selectcuot.value),ValorCuotaLCSR,'S');
+        Cargarcc(parseInt(selectcuot.value),ValorCuotaLISR,'S');
     }
 }
