@@ -548,8 +548,6 @@ El argumento b recibe el array con las cuotas calculas en la funcion que le corr
 El argumento c recibe un string que es una bandera que si es S carga la imagen de santander rio si es H carga la de HSBC
 */ 
 
-let flag;
-
 function Cargarcc (a, b, c){
     cards1.classList.add('noneview');
     cards2.classList.add('noneview');
@@ -568,7 +566,6 @@ function Cargarcc (a, b, c){
         });
     }else{
         b.forEach(function (element, index) {
-            flag = index;
             if(index === a){
             contCards.innerHTML += `<div class="cards col-4 align-self-center m-2" id="card${index}">
             <div class="imgCard"><img src="${x}" alt=""></div>
@@ -586,6 +583,7 @@ function borrarCards(a){
             contCards.remove(i);
         }
     }
+    flag = "";
 }
 
 function  valMcredit (a, b){
