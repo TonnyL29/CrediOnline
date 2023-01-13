@@ -605,3 +605,5 @@ btncontinuar.onclick = (e) =>{
         Cargarcc(parseInt(selectcuot.value),ValorCuotaLISR,'S');
     }
 }
+
+
