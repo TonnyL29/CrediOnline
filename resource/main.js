@@ -898,22 +898,25 @@ function valMcredit(a, b) {
   return c;
 }
 
-btncontinuar.onclick = (e) => {
-  e.preventDefault();
-  validarFormulario();
-  borrarCards();
-  if (!valMcredit(vvehiculo.value, mcredit.value)) {
-    Swal.fire({
-      icon: "error",
-      title: "Oops...",
-      text: "El valor del credito no puede superar el 70% del valor del vehículo",
-    });
-  } else {
-    CalcCreditIFHCBC(parseInt(mcredit.value));
-    CalcCreditLCSR(parseInt(mcredit.value));
-    CalcCreditLISR(parseInt(mcredit.value));
-    Cargarcc(parseInt(selectcuot.value), ValorCuotaIFHCBC, "H");
-    Cargarcc(parseInt(selectcuot.value), ValorCuotaLCSR, "S");
-    Cargarcc(parseInt(selectcuot.value), ValorCuotaLISR, "S");
-  }
-};
+
+btncontinuar.onclick = (e) =>{
+    e.preventDefault();
+    validarFormulario();
+    borrarCards();
+    if(!valMcredit(vvehiculo.value, mcredit.value)){
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'El valor del credito no puede superar el 70% del valor del vehículo',
+          })
+    }else{
+        CalcCreditIFHCBC(parseInt(mcredit.value)); 
+        CalcCreditLCSR(parseInt(mcredit.value));
+        CalcCreditLISR(parseInt(mcredit.value));
+        Cargarcc(parseInt(selectcuot.value),ValorCuotaIFHCBC,'H');
+        Cargarcc(parseInt(selectcuot.value),ValorCuotaLCSR,'S');
+        Cargarcc(parseInt(selectcuot.value),ValorCuotaLISR,'S');
+    }
+}
+
+
