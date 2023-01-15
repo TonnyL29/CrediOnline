@@ -834,6 +834,30 @@ El argumento e recibe el titulo correspondiente a la linea de credito
 */
 let flag = 0;
 function Cargarcc(a, b, c, d, e) {
+  let z = "";
+  switch (a) {
+    case 2:
+      z = '12 cuotas de';
+      break;
+    case 3:
+      z = '18 cuotas de' ;
+      break;
+    case 4:
+      z = '24 cuotas de' ;
+      break;
+    case 5:
+      z = '36 cuotas de' ;
+      break;
+    case 6:
+      z = '48 cuotas de' ;
+      break; 
+    case 7:
+      z = '60 cuotas de' ;
+      break;
+      default:
+      z = 'Valor de la cuota';
+      break;
+  }
   let x =
     c == "S"
       ? "resource/media/logo-Santander.png"
@@ -841,20 +865,22 @@ function Cargarcc(a, b, c, d, e) {
 
 if (parseInt(a) == 1) {
     b.forEach(function (element, index) {
+      let y = new Intl.NumberFormat('es-ES', { maximumSignificantDigits: 3 }).format(element);
       const div = document.createElement("div");
       div.setAttribute("class", "cards col-4 align-self-center m-2");
       div.setAttribute("id", `cuot${index}`);
-      div.innerHTML += `<div class="imgCard"><img src="${x}" alt=""><h4 class="tituloCard">${e}</h4></div><div class="txtCard"><p>${d}</p></div><div class="valor"><b>$ ${element}</b></div>`;
+      div.innerHTML += `<div class="imgCard"><img src="${x}" alt=""><h4 class="tituloCard">${e}</h4></div><div class="txtCard"><p>${d}</p></div><div class="valor"><b>${z} $${y}</b></div>`;
       contCards.appendChild(div);
       flag++;
     });
   } else {
     b.forEach(function (element, index) {
       if (index === a) {
+        let y = new Intl.NumberFormat('es-ES', { maximumSignificantDigits: 3 }).format(element);
         const div = document.createElement("div");
         div.setAttribute("class", "cards col-4 align-self-center m-2");
         div.setAttribute("id", `cuot${flag}`);
-        div.innerHTML += `<div class="imgCard"><img src="${x}" alt=""></div><h4 class="tituloCard">${e}</h4><div class="txtCard"><p>${d}</p></div><div class="valor"><b>$ ${element}</b></div>`;
+        div.innerHTML += `<div class="imgCard"><img src="${x}" alt=""></div><h4 class="tituloCard">${e}</h4><div class="txtCard"><p>${d}</p></div><div class="valor"><b>${z} $${y}</b></div>`;
         contCards.appendChild(div);
         flag++;
       }
