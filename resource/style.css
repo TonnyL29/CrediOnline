@@ -10,7 +10,7 @@ html {
 
 .hipervinculo {
   height: 80px;
-  background-color: #BFD2D2; }
+  background-color: #bfd2d2; }
 
 .contenedorNav {
   display: flex;
@@ -21,7 +21,7 @@ html {
   justify-content: end;
   height: 80px;
   width: 100%;
-  background-color: #C8BFD2;
+  background-color: #c8bfd2;
   box-shadow: 25px 15px 20px rgba(0, 0, 0, 0.568);
   position: fixed;
   z-index: 998 !important; }
@@ -46,7 +46,7 @@ html {
       justify-content: center;
       opacity: 0; }
   .contenedorNav .itemNav:hover span {
-    transition: .5s;
+    transition: 0.5s;
     translate: 0px -150px; }
   .contenedorNav .itemNav:hover p {
     opacity: 1; }
@@ -54,12 +54,12 @@ html {
 .conteinerHome {
   display: grid;
   grid-column: auto;
-  grid-template-areas: "img tx";
+  grid-template-areas: 'img tx';
   align-items: center;
   background-color: #d2bfbf85; }
 
 .cont-img {
-  grid-area: "img";
+  grid-area: 'img';
   margin-top: 105px;
   width: 25vw;
   margin-left: 15%;
@@ -68,7 +68,7 @@ html {
     width: 100%; }
 
 .cont-p {
-  grid-area: "tx";
+  grid-area: 'tx';
   margin-top: 25px;
   width: 25vw; }
   .cont-p p {
@@ -77,7 +77,7 @@ html {
     color: black; }
 
 .Cont-Card {
-  background-color: #C8D2BF; }
+  background-color: #c8d2bf; }
 
 .container {
   width: 100%;
@@ -102,12 +102,12 @@ html {
     .container .card h4 {
       font-weight: 600; }
     .container .card p {
-      margin-top: .7rem;
+      margin-top: 0.7rem;
       padding: 0 1rem;
       font-size: 16px;
       font-weight: 300; }
     .container .card .imgauto {
-      margin-top: .85rem;
+      margin-top: 0.85rem;
       width: 65%; }
   .container .container .card:hover {
     transform: translateY(-15px);
@@ -157,7 +157,7 @@ html {
     cursor: pointer; }
 
 .form {
-  background-color: #BFD2D2;
+  background-color: #bfd2d2;
   display: flex;
   flex-direction: column;
   align-items: center; }
@@ -191,7 +191,7 @@ html {
         border: 0.25px solid #444343;
         border-radius: 8px;
         margin-top: 10px;
-        background-color: #008CBA;
+        background-color: #008cba;
         box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         height: 3rem; }
       .form form input .btncontinuar:hover {
@@ -206,8 +206,8 @@ html {
     .form form select:focus {
       border: 0.25px solid #444343;
       box-shadow: 0 8px 16px 0 #82b4c577, 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
-    .form form input[type=number]::-webkit-inner-spin-button,
-    .form form input[type=number]::-webkit-outer-spin-button {
+    .form form input[type='number']::-webkit-inner-spin-button,
+    .form form input[type='number']::-webkit-outer-spin-button {
       -webkit-appearance: none;
       margin: 0; }
     .form form input::placeholder {
@@ -223,7 +223,7 @@ html {
   border: 0.25px solid #444343;
   border-radius: 8px;
   margin-top: 10px;
-  background-color: #008CBA;
+  background-color: #008cba;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   height: 3rem; }
 
@@ -237,8 +237,8 @@ html {
   justify-content: center;
   margin-top: 2rem;
   margin-bottom: 1rem;
-  margin-right: .5rem;
-  margin-left: .5rem; }
+  margin-right: 0.5rem;
+  margin-left: 0.5rem; }
   .conteinerCard .cards {
     display: flex;
     flex-direction: column;
@@ -247,15 +247,15 @@ html {
     width: 350px;
     height: 400px;
     border: 0.2px solid #d2bfbf85;
-    border-radius: .5rem;
-    margin-right: .5rem;
-    margin-left: .5rem; }
+    border-radius: 0.5rem;
+    margin-right: 0.5rem;
+    margin-left: 0.5rem; }
     .conteinerCard .cards .imgCard {
       width: 72%; }
       .conteinerCard .cards .imgCard img {
         width: 100%; }
     .conteinerCard .cards .txtCard p {
-      margin-left: .75rem; }
+      margin-left: 0.75rem; }
     .conteinerCard .cards .valor {
       font-size: 22px; }
 
@@ -321,12 +321,12 @@ html {
       font-size: 1em;
       cursor: pointer;
       margin-top: 2em;
-      margin-right: .75em;
+      margin-right: 0.75em;
       height: 2em;
       width: 6em;
-      background-color: #008CBA;
-      border: .01em solid black;
-      border-radius: .4em; }
+      background-color: #008cba;
+      border: 0.01em solid black;
+      border-radius: 0.4em; }
     .window-notice .content .btnwindows-si:hover {
       background-color: #00ba8f; }
     .window-notice .content .btnwindows-no:hover {
@@ -347,10 +347,57 @@ html {
 
 .hipervinculo1 {
   height: 150px;
-  background-color: #BFD2D2; }
+  background-color: #bfd2d2; }
 
 .col-fon {
-  background-color: #BFD2D2; }
+  background-color: #bfd2d2; }
 
 .cont-contact {
-  background-color: #E3FAFA; }
+  background-color: #e3fafa; }
+
+.conteiner-slider {
+  position: relative;
+  font-family: 'Lato', sans-serif;
+  font-size: 14px;
+  color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  padding: 10px; }
+
+.swiper {
+  width: 100%;
+  height: 100%; }
+
+.swiper-slide {
+  position: relative;
+  border-radius: 15px;
+  text-align: start;
+  text-align: center;
+  font-size: 18px;
+  box-shadow: 0px 4px 4px rgba(196, 196, 196, 0.25);
+  background: #fff;
+  height: 500px; }
+  .swiper-slide .sliderimg img {
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover; }
+  .swiper-slide .textslider {
+    padding: 1rem; }
+  .swiper-slide h4 {
+    font-size: 1.65rem;
+    font-weight: bold; }
+  .swiper-slide .calificacion {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+    align-content: flex-end;
+    justify-items: end;
+    font-size: 25px;
+    margin-bottom: 15px;
+    color: #FFA500;
+    background-color: #d2bfbf85; }

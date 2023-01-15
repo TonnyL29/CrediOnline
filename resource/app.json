@@ -1,0 +1,80 @@
+[
+    {
+        "nombre": "Sergio Rincón",
+        "perfil": "resource/media/perfil/1-hombre.webp",
+        "review": "Muy buena atención",
+        "calificacion": "4"
+    },
+    {
+        "nombre": "Anni Cisneros",
+        "perfil": "resource/media/perfil/1-mujer.webp",
+        "review": "Excelente servicio, muy buena experiencia.",
+        "calificacion": "4"
+    },
+    {
+        "nombre": "Jennifer Amador",
+        "perfil": "resource/media/perfil/2-mujer.webp",
+        "review": "Muy buena experiencia, es la segunda vez que tramito todo con CrediOnline, recomendable 100%",
+        "calificacion": "5"
+    },
+    {
+        "nombre": "Andrea Escamilla",
+        "perfil": "resource/media/perfil/3-mujer.webp",
+        "review": "Es mi primera vez y salió todo correcto",
+        "calificacion": "5"
+    },
+    {
+        "nombre": "Manuel Barrios",
+        "perfil": "resource/media/perfil/2-hombre.webp",
+        "review": "Volvere a gestionar mis créditos con CrediOnline, porque es muy fácil",
+        "calificacion": "4"
+    },
+    {
+        "nombre": "Jorge Medina",
+        "perfil": "resource/media/perfil/3-hombre.webp",
+        "review": "Todo bien",
+        "calificacion": "3"
+    },
+    {
+        "nombre": "Marta Rael",
+        "perfil": "resource/media/perfil/4-mujer.webp",
+        "review": "Lo gestione desde casa, en 72 hrs estaba acreditado en mi cuenta, super facil!",
+        "calificacion": "4"
+    },
+    {
+        "nombre": "Iván Duarte",
+        "perfil": "resource/media/perfil/4-hombre.webp",
+        "review": "Primera vez que gestiono mi crédito por esta web, muy fácil y confiable",
+        "calificacion": "4"
+    },
+    {
+        "nombre": "Ana Aranda",
+        "perfil": "resource/media/perfil/5-mujer.webp",
+        "review": "Lo recomendé a mis familiares y amigos, porque es muy fácil",
+        "calificacion": "5"
+    },
+    {
+        "nombre": "Manuel Preciado",
+        "perfil": "resource/media/perfil/5-hombre.webp",
+        "review": "Vine por recomendación de un amigo y me sorprendí por la facilidad y practicidad!",
+        "calificacion": "5"
+    },
+    {
+        "nombre": "Iván Barela",
+        "perfil": "resource/media/perfil/6-hombre.webp",
+        "review": "Muy buen servicio. Recomendable, bastante ágil",
+        "calificacion": "4"
+    },
+    {
+        "nombre": "Andrea Granado",
+        "perfil": "resource/media/perfil/6-mujer.webp",
+        "review": "Lo recomiendo, porque es fácil y rápido.",
+        "calificacion": "4"
+    },    
+    {
+        "nombre": "Laura Segura",
+        "perfil": "resource/media/perfil/7-mujer.webp",
+        "review": "Me encanto, lo recomiendo, porque es supersencillo.",
+        "calificacion": "4"
+    }
+]

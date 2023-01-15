@@ -919,4 +919,34 @@ btncontinuar.onclick = (e) =>{
     }
 }
 
+const coment = document.getElementById('swiper-wrapper');
 
+function CComentarios (){
+  fetch('resource/app.json')
+    .then(respuesta => respuesta.json())
+    .then(comentarios => {
+      comentarios.forEach(comentario => {
+        let start = "";
+        for(let i =0; comentario.calificacion > i; i++){
+          start += '<label for="radio1">★</label>';
+        }
+        const row = document.createElement('div');
+        row.innerHTML += `
+          <div class="swiper-slide">
+            <div class="sliderimg"><img class="sliderimg" src="${comentario.perfil}"></div>
+            <div class="textslider">
+                <h4>${comentario.nombre}</h4>
+                <p>${comentario.review}</p>
+            </div>
+            <div class="calificacion">
+                ${start}
+            </div>
+          </div>
+        `;
+        row.className += "swiper-slide";
+        coment.appendChild(row);
+      });
+    })
+}
+
+CComentarios();
