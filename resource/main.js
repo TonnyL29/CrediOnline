@@ -801,14 +801,12 @@ const LS = () => {
       let d = localStorage.getItem("dni");
       let s = localStorage.getItem("sexo");
       let mc = localStorage.getItem("mcredit");
-      let cuot = localStorage.getItem("Cuotas");
       let vvehic = localStorage.getItem("Vvehiculo");
       nombre.value = n;
       apellido.value = a;
       dni.value = d;
       sexo.value = s;
       mcredit.value = mc;
-      selectcuot.value = cuot;
       vvehiculo.value = vvehic;
     };
   }
