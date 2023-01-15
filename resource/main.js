@@ -1,438 +1,3 @@
-// Constante comision por gestion
-
-const comision = 1.0815;
-
-// constantes de linea de inclusion financiara Santander Rio
-const LISR = {
-  sinc12: 122.55,
-  sinc18: 95.24,
-  sinc24: 82.13,
-  sinc36: 70.03,
-  sinc48: 64.86,
-  sinc60: 62.33,
-};
-
-// Objeto Constante linea convencional Santander Rio
-
-const LCSR = {
-  sconv12: 132.6,
-  sconv18: 105.71,
-  sconv24: 93.07,
-  sconv36: 82.71,
-  sconv48: 81.98,
-  sconv60: 80.17,
-};
-
-// Objeto Constante inclusion financiera HCBC
-
-const IFHCBC = {
-  hinc12: 105.17,
-  hinc18: 77.49,
-  hinc24: 63.94,
-  hinc36: 50.95,
-  hinc48: 44.98,
-  hinc60: 41.78,
-};
-
-// Arrays donde se almacen los valores de cuotas
-
-const ValorCuotaIFHCBC = [];
-const ValorCuotaLCSR = [];
-const ValorCuotaLISR = [];
-
-// Funciones para calcular el valor de las cuotas de los creditos + comision por gestion
-
-function CalcCreditIFHCBC(a) {
-  let resultado;
-  ValorCuotaIFHCBC.push(
-    parseFloat(
-      (resultado = (((a * comision) / 1000) * IFHCBC.hinc12).toFixed(2))
-    )
-  );
-  ValorCuotaIFHCBC.push(
-    parseFloat(
-      (resultado = (((a * comision) / 1000) * IFHCBC.hinc18).toFixed(2))
-    )
-  );
-  ValorCuotaIFHCBC.push(
-    parseFloat(
-      (resultado = (((a * comision) / 1000) * IFHCBC.hinc24).toFixed(2))
-    )
-  );
-  ValorCuotaIFHCBC.push(
-    parseFloat(
-      (resultado = (((a * comision) / 1000) * IFHCBC.hinc36).toFixed(2))
-    )
-  );
-  ValorCuotaIFHCBC.push(
-    parseFloat(
-      (resultado = (((a * comision) / 1000) * IFHCBC.hinc48).toFixed(2))
-    )
-  );
-  ValorCuotaIFHCBC.push(
-    parseFloat(
-      (resultado = (((a * comision) / 1000) * IFHCBC.hinc60).toFixed(2))
-    )
-  );
-  return ValorCuotaIFHCBC;
-}
-function CalcCreditLCSR(a) {
-  let resultado;
-  ValorCuotaLCSR.push(
-    parseFloat(
-      (resultado = (((a * comision) / 1000) * LCSR.sconv12).toFixed(2))
-    )
-  );
-  ValorCuotaLCSR.push(
-    parseFloat(
-      (resultado = (((a * comision) / 1000) * LCSR.sconv18).toFixed(2))
-    )
-  );
-  ValorCuotaLCSR.push(
-    parseFloat(
-      (resultado = (((a * comision) / 1000) * LCSR.sconv24).toFixed(2))
-    )
-  );
-  ValorCuotaLCSR.push(
-    parseFloat(
-      (resultado = (((a * comision) / 1000) * LCSR.sconv36).toFixed(2))
-    )
-  );
-  ValorCuotaLCSR.push(
-    parseFloat(
-      (resultado = (((a * comision) / 1000) * LCSR.sconv48).toFixed(2))
-    )
-  );
-  ValorCuotaLCSR.push(
-    parseFloat(
-      (resultado = (((a * comision) / 1000) * LCSR.sconv60).toFixed(2))
-    )
-  );
-  return ValorCuotaLCSR;
-}
-function CalcCreditLISR(a) {
-  let resultado;
-  ValorCuotaLISR.push(
-    parseFloat((resultado = (((a * comision) / 1000) * LISR.sinc12).toFixed(2)))
-  );
-  ValorCuotaLISR.push(
-    parseFloat((resultado = (((a * comision) / 1000) * LISR.sinc18).toFixed(2)))
-  );
-  ValorCuotaLISR.push(
-    parseFloat((resultado = (((a * comision) / 1000) * LISR.sinc24).toFixed(2)))
-  );
-  ValorCuotaLISR.push(
-    parseFloat((resultado = (((a * comision) / 1000) * LISR.sinc36).toFixed(2)))
-  );
-  ValorCuotaLISR.push(
-    parseFloat((resultado = (((a * comision) / 1000) * LISR.sinc48).toFixed(2)))
-  );
-  ValorCuotaLISR.push(
-    parseFloat((resultado = (((a * comision) / 1000) * LISR.sinc60).toFixed(2)))
-  );
-  return ValorCuotaLISR;
-}
-
-// Arrow Function para limpiar los Arrays
-
-const Clear = (Ar) => {
-  for (let i = Ar.length; i > 0; i--) {
-    Ar.pop();
-  }
-};
-
-// Filtrar los arrays para obtener el valor de las cuotas coincidente con el plazo deseado
-
-function filterAr(a) {
-  let Cuota = [];
-  ValorCuotaIFHCBC;
-  ValorCuotaLCSR;
-  ValorCuotaLISR;
-  switch (Vcuota) {
-    case 12:
-      Cuota.push(ValorCuotaIFHCBC[0]);
-      Cuota.push(ValorCuotaLCSR[0]);
-      Cuota.push(ValorCuotaLISR[0]);
-      break;
-    case 18:
-      Cuota.push(ValorCuotaIFHCBC[1]);
-      Cuota.push(ValorCuotaLCSR[1]);
-      Cuota.push(ValorCuotaLISR[1]);
-      break;
-    case 24:
-      Cuota.push(ValorCuotaIFHCBC[2]);
-      Cuota.push(ValorCuotaLCSR[2]);
-      Cuota.push(ValorCuotaLISR[2]);
-      break;
-    case 36:
-      Cuota.push(ValorCuotaIFHCBC[3]);
-      Cuota.push(ValorCuotaLCSR[3]);
-      Cuota.push(ValorCuotaLISR[3]);
-      break;
-    case 48:
-      Cuota.push(ValorCuotaIFHCBC[4]);
-      Cuota.push(ValorCuotaLCSR[4]);
-      Cuota.push(ValorCuotaLISR[4]);
-      break;
-    case 60:
-      Cuota.push(ValorCuotaIFHCBC[5]);
-      Cuota.push(ValorCuotaLCSR[5]);
-      Cuota.push(ValorCuotaLISR[5]);
-      break;
-  }
-  return Cuota;
-}
-
-// Capturar eventos formulario simulacion
-
-//Capturar mensaje de error html
-let mensajeErrorName = document.getElementById("ErrorName");
-let mensajeErrorLastName = document.getElementById("ErrorLastName");
-let mensajeErrorDni = document.getElementById("ErrorDni");
-let mensajeErrorSex = document.getElementById("ErrorSex");
-let mensajeErrorMCredit = document.getElementById("ErrorMCredit");
-let mensajeErrorCuota = document.getElementById("ErrorCuotas");
-let btncontinuar = document.getElementById("btncontinuar");
-
-//Capturar elementos del formulario y validacion
-
-let nombre = document.getElementById("form-nombre");
-nombre.onblur = () => {
-  let x = nombre.value;
-  localStorage.setItem("nombre", x);
-  if (x == "") {
-    mensajeErrorName.classList.remove("noneview");
-    mensajeErrorName.classList.add("view");
-    nombre.classList.add("ErrorInput");
-  } else {
-    mensajeErrorName.classList.remove("view");
-    mensajeErrorName.classList.add("noneview");
-    nombre.classList.remove("ErrorInput");
-  }
-};
-let apellido = document.getElementById("form-apellido");
-apellido.onblur = () => {
-  let x = apellido.value;
-  localStorage.setItem("apellido", x);
-  if (x == "") {
-    mensajeErrorLastName.classList.remove("noneview");
-    mensajeErrorLastName.classList.add("view");
-    apellido.classList.add("ErrorInput");
-  } else {
-    mensajeErrorLastName.classList.remove("view");
-    mensajeErrorLastName.classList.add("noneview");
-    apellido.classList.remove("ErrorInput");
-  }
-};
-
-let dni = document.getElementById("form-dni");
-dni.onblur = () => {
-  let x = parseInt(dni.value);
-  localStorage.setItem("dni", x);
-  if (isNaN(x)) {
-    mensajeErrorDni.classList.remove("noneview");
-    mensajeErrorDni.classList.add("view");
-    dni.classList.add("ErrorInput");
-  } else {
-    mensajeErrorDni.classList.remove("view");
-    mensajeErrorDni.classList.add("noneview");
-    dni.classList.remove("ErrorInput");
-  }
-};
-
-let sexo = document.getElementById("select-sexo");
-sexo.onblur = () => {
-  let x = sexo.value;
-  localStorage.setItem("sexo", x);
-  if (x == 0) {
-    mensajeErrorSex.classList.remove("noneview");
-    mensajeErrorSex.classList.add("view");
-    sexo.classList.add("ErrorInput");
-  } else {
-    mensajeErrorSex.classList.remove("view");
-    mensajeErrorSex.classList.add("noneview");
-    sexo.classList.remove("ErrorInput");
-  }
-};
-let mcredit = document.getElementById("form-mcredit");
-mcredit.onblur = () => {
-  let x = mcredit.value;
-  localStorage.setItem("mcredit", x);
-  if (mcredit > 100000 && mcredit < 6000000) {
-    mensajeErrorMCredit.classList.remove("noneview");
-    mensajeErrorMCredit.classList.add("view");
-    mcredit.classList.add("ErrorInput");
-  } else {
-    mensajeErrorMCredit.classList.remove("view");
-    mensajeErrorMCredit.classList.add("noneview");
-    mcredit.classList.remove("ErrorInput");
-  }
-};
-let selectcuot = document.getElementById("select-cuota");
-selectcuot.onblur = () => {
-  let x = selectcuot.value;
-  localStorage.setItem("Cuotas", x);
-  if (x == 0) {
-    mensajeErrorCuota.classList.remove("noneview");
-    mensajeErrorCuota.classList.add("view");
-    selectcuot.classList.add("ErrorInput");
-  } else {
-    mensajeErrorCuota.classList.remove("view");
-    mensajeErrorCuota.classList.add("noneview");
-    selectcuot.classList.remove("ErrorInput");
-  }
-};
-
-let vvehiculo = document.getElementById("form-vvehiculo");
-vvehiculo.onblur = () => {
-  let x = vvehiculo.value;
-  localStorage.setItem("Vvehiculo", x);
-};
-
-// funcion para valirdar el formulario antes del submit
-
-const valForm = [];
-
-function validarFormulario() {
-  let Snombre = nombre.value;
-  if (Snombre.length == 0) {
-    mensajeErrorName.classList.remove("noneview");
-    mensajeErrorName.classList.add("view");
-    nombre.classList.add("ErrorInput");
-  }
-  let Sapellido = apellido.value;
-  if (Sapellido.length == 0) {
-    mensajeErrorLastName.classList.remove("noneview");
-    mensajeErrorLastName.classList.add("view");
-    apellido.classList.add("ErrorInput");
-  }
-  let Sdni = dni.value;
-  if (parseInt(Sdni) < 1000000 || parseInt(Sdni) > 99999999) {
-    mensajeErrorDni.classList.remove("noneview");
-    mensajeErrorDni.classList.add("view");
-    dni.classList.add("ErrorInput");
-  }
-  let montoC = mcredit.value;
-  if (montoC != "") {
-    valForm.push(parseInt(montoC));
-  } else if (montoC == "") {
-    mensajeErrorMCredit.classList.remove("noneview");
-    mensajeErrorMCredit.classList.add("view");
-    mcredit.classList.add("ErrorInput");
-  } else if (parseInt(montoC) < 90000 || parseInt(montoC) > 6000000) {
-    mensajeErrorMCredit.classList.remove("noneview");
-    mensajeErrorMCredit.classList.add("view");
-    mcredit.classList.add("ErrorInput");
-  }
-  let SC = selectcuot.value;
-  if (SC == 0) {
-    mensajeErrorCuota.classList.remove("noneview");
-    mensajeErrorCuota.classList.add("view");
-    selectcuot.classList.add("ErrorInput");
-  } else {
-    valForm.push(parseInt(SC));
-  }
-}
-// Evento para mostrar/ocultar filtro
-
-let valorfilter = false;
-let clickFiltro = document.getElementById("textFilter");
-let MostrarFiltro = document.getElementById("Filtro");
-
-clickFiltro.onclick = () => {
-  if (valorfilter == false) {
-    MostrarFiltro.classList.remove("filtronone");
-    MostrarFiltro.classList.add("filterview");
-    valorfilter = true;
-  } else {
-    MostrarFiltro.classList.remove("filterview");
-    MostrarFiltro.classList.add("filtronone");
-    valorfilter = false;
-  }
-};
-
-// Eventos en el filtro
-
-let filtrovalorrec = document.getElementById("filtrovalorrec");
-let filtrovalormenor = document.getElementById("filtrovalormenor");
-let filtrovalormayor = document.getElementById("filtrovalormayor");
-let filtrobankS = document.getElementById("filtrobankS");
-let filtrobankHSBC = document.getElementById("filtrobankHSBC");
-let elementfilter1 = document.getElementById("elementfilter1");
-let elementfilter2 = document.getElementById("elementfilter2");
-let elementfilter3 = document.getElementById("elementfilter3");
-let elementfilter4 = document.getElementById("elementfilter4");
-let elementfilter5 = document.getElementById("elementfilter5");
-
-// Eliminar elemento del filtro y mostrar el elemento que se esta filtrando
-
-filtrovalorrec.onclick = () => {
-  filtrovalorrec.classList.add("noneview");
-  elementfilter1.classList.remove("noneview");
-  MostrarFiltro.classList.remove("filterview");
-  MostrarFiltro.classList.add("filtronone");
-  valorfilter = false;
-};
-
-filtrovalormenor.onclick = () => {
-  filtrovalormenor.classList.add("noneview");
-  filtrovalormayor.classList.add("noneview");
-  elementfilter2.classList.remove("noneview");
-  MostrarFiltro.classList.remove("filterview");
-  MostrarFiltro.classList.add("filtronone");
-  valorfilter = false;
-};
-filtrovalormayor.onclick = () => {
-  filtrovalormayor.classList.add("noneview");
-  filtrovalormenor.classList.add("noneview");
-  elementfilter3.classList.remove("noneview");
-  MostrarFiltro.classList.remove("filterview");
-  MostrarFiltro.classList.add("filtronone");
-  valorfilter = false;
-};
-filtrobankS.onclick = () => {
-  filtrobankS.classList.add("noneview");
-  elementfilter4.classList.remove("noneview");
-  MostrarFiltro.classList.remove("filterview");
-  MostrarFiltro.classList.add("filtronone");
-  valorfilter = false;
-};
-filtrobankHSBC.onclick = () => {
-  filtrobankHSBC.classList.add("noneview");
-  elementfilter5.classList.remove("noneview");
-  MostrarFiltro.classList.remove("filterview");
-  MostrarFiltro.classList.add("filtronone");
-  valorfilter = false;
-};
-
-// eliminar el valor filtrado y volverlo a mostrar en el filtro
-
-elementfilter1.onclick = () => {
-  elementfilter1.classList.add("noneview");
-  filtrovalorrec.classList.remove("noneview");
-};
-elementfilter2.onclick = () => {
-  elementfilter2.classList.add("noneview");
-  filtrovalormenor.classList.remove("noneview");
-  filtrovalormayor.classList.remove("noneview");
-};
-elementfilter3.onclick = () => {
-  elementfilter3.classList.add("noneview");
-  filtrovalormayor.classList.remove("noneview");
-  filtrovalormenor.classList.remove("noneview");
-};
-elementfilter4.onclick = () => {
-  elementfilter4.classList.add("noneview");
-  filtrobankS.classList.remove("noneview");
-};
-
-elementfilter5.onclick = () => {
-  elementfilter5.classList.add("noneview");
-  filtrobankHSBC.classList.remove("noneview");
-};
-
-/* Objetos vehiculos, que contiene las marcas y modelos */
-
 const vehiculos = {
   CHEVROLET: {
     CRUZE: [
@@ -741,6 +306,413 @@ const vehiculos = {
   },
 };
 
+// Constante comision por gestion
+
+const comision = 1.0815;
+
+// constantes de linea de inclusion financiara Santander Rio
+const LISR = {
+  sinc12: 122.55,
+  sinc18: 95.24,
+  sinc24: 82.13,
+  sinc36: 70.03,
+  sinc48: 64.86,
+  sinc60: 62.33,
+};
+const tituloLISR = 'Linea Inclusion Financiera';
+const textLISR = 'Esta línea de financiación es una financiación subsidiada por el estado, para poder tomarla debe cumplir una serie de requisitos, con una tasa preferencial con un TNA del 56%, destinada a la compra de vehículos.-';
+
+// Objeto Constante linea convencional Santander Rio
+
+const LCSR = {
+  sconv12: 132.6,
+  sconv18: 105.71,
+  sconv24: 93.07,
+  sconv36: 82.71,
+  sconv48: 81.98,
+  sconv60: 80.17,
+};
+
+const tituloLCSR = 'Linea Tradicional';
+const textLCSR = 'Esta línea de financiación es una financiación tradicional, para poder tomarla debe cumplir una serie de requisitos, con un TNA del 78% destinada a la compra de vehículos.-';
+
+// Objeto Constante inclusion financiera HCBC
+
+const IFHCBC = {
+  hinc12: 105.17,
+  hinc18: 77.49,
+  hinc24: 63.94,
+  hinc36: 50.95,
+  hinc48: 44.98,
+  hinc60: 41.78,
+};
+
+const tituloIFHCBC = 'Linea Inclusion Financiera';
+const textIFHCBC = 'Esta línea de financiación es una financiación subsidiada por el estado, para poder tomarla debe cumplir una serie de requisitos, con una tasa preferencial con un TNA del 38%, destinada a la compra de vehículos.-';
+
+// Arrays donde se almacen los valores de cuotas
+
+const ValorCuotaIFHCBC = [];
+const ValorCuotaLCSR = [];
+const ValorCuotaLISR = [];
+
+// Funciones para calcular el valor de las cuotas de los creditos + comision por gestion
+
+function CalcCreditIFHCBC(a) {
+  let resultado;
+  ValorCuotaIFHCBC.push(
+    parseFloat(
+      (resultado = (((a * comision) / 1000) * IFHCBC.hinc12).toFixed(2))
+    )
+  );
+  ValorCuotaIFHCBC.push(
+    parseFloat(
+      (resultado = (((a * comision) / 1000) * IFHCBC.hinc18).toFixed(2))
+    )
+  );
+  ValorCuotaIFHCBC.push(
+    parseFloat(
+      (resultado = (((a * comision) / 1000) * IFHCBC.hinc24).toFixed(2))
+    )
+  );
+  ValorCuotaIFHCBC.push(
+    parseFloat(
+      (resultado = (((a * comision) / 1000) * IFHCBC.hinc36).toFixed(2))
+    )
+  );
+  ValorCuotaIFHCBC.push(
+    parseFloat(
+      (resultado = (((a * comision) / 1000) * IFHCBC.hinc48).toFixed(2))
+    )
+  );
+  ValorCuotaIFHCBC.push(
+    parseFloat(
+      (resultado = (((a * comision) / 1000) * IFHCBC.hinc60).toFixed(2))
+    )
+  );
+  return ValorCuotaIFHCBC;
+}
+function CalcCreditLCSR(a) {
+  let resultado;
+  ValorCuotaLCSR.push(
+    parseFloat(
+      (resultado = (((a * comision) / 1000) * LCSR.sconv12).toFixed(2))
+    )
+  );
+  ValorCuotaLCSR.push(
+    parseFloat(
+      (resultado = (((a * comision) / 1000) * LCSR.sconv18).toFixed(2))
+    )
+  );
+  ValorCuotaLCSR.push(
+    parseFloat(
+      (resultado = (((a * comision) / 1000) * LCSR.sconv24).toFixed(2))
+    )
+  );
+  ValorCuotaLCSR.push(
+    parseFloat(
+      (resultado = (((a * comision) / 1000) * LCSR.sconv36).toFixed(2))
+    )
+  );
+  ValorCuotaLCSR.push(
+    parseFloat(
+      (resultado = (((a * comision) / 1000) * LCSR.sconv48).toFixed(2))
+    )
+  );
+  ValorCuotaLCSR.push(
+    parseFloat(
+      (resultado = (((a * comision) / 1000) * LCSR.sconv60).toFixed(2))
+    )
+  );
+  return ValorCuotaLCSR;
+}
+function CalcCreditLISR(a) {
+  let resultado;
+  ValorCuotaLISR.push(
+    parseFloat((resultado = (((a * comision) / 1000) * LISR.sinc12).toFixed(2)))
+  );
+  ValorCuotaLISR.push(
+    parseFloat((resultado = (((a * comision) / 1000) * LISR.sinc18).toFixed(2)))
+  );
+  ValorCuotaLISR.push(
+    parseFloat((resultado = (((a * comision) / 1000) * LISR.sinc24).toFixed(2)))
+  );
+  ValorCuotaLISR.push(
+    parseFloat((resultado = (((a * comision) / 1000) * LISR.sinc36).toFixed(2)))
+  );
+  ValorCuotaLISR.push(
+    parseFloat((resultado = (((a * comision) / 1000) * LISR.sinc48).toFixed(2)))
+  );
+  ValorCuotaLISR.push(
+    parseFloat((resultado = (((a * comision) / 1000) * LISR.sinc60).toFixed(2)))
+  );
+  return ValorCuotaLISR;
+}
+
+// Arrow Function para limpiar los Arrays
+
+const Clear = (Ar) => {
+  for (let i = Ar.length; i > 0; i--) {
+    Ar.pop();
+  }
+};
+
+
+// Capturar eventos formulario simulacion
+
+//Capturar mensaje de error html
+let mensajeErrorName = document.getElementById("ErrorName");
+let mensajeErrorLastName = document.getElementById("ErrorLastName");
+let mensajeErrorDni = document.getElementById("ErrorDni");
+let mensajeErrorSex = document.getElementById("ErrorSex");
+let mensajeErrorMCredit = document.getElementById("ErrorMCredit");
+let mensajeErrorCuota = document.getElementById("ErrorCuotas");
+let btncontinuar = document.getElementById("btncontinuar");
+let btneditar = document.getElementById("editar");
+let gnc = document.getElementById('select-gnc');
+let anio = document.getElementById('anio');
+
+//Capturar elementos del formulario y validacion
+
+let nombre = document.getElementById("form-nombre");
+nombre.onblur = () => {
+  let x = nombre.value;
+  localStorage.setItem("nombre", x);
+  if (x == "") {
+    mensajeErrorName.classList.remove("noneview");
+    mensajeErrorName.classList.add("view");
+    nombre.classList.add("ErrorInput");
+  } else {
+    mensajeErrorName.classList.remove("view");
+    mensajeErrorName.classList.add("noneview");
+    nombre.classList.remove("ErrorInput");
+  }
+};
+let apellido = document.getElementById("form-apellido");
+apellido.onblur = () => {
+  let x = apellido.value;
+  localStorage.setItem("apellido", x);
+  if (x == "") {
+    mensajeErrorLastName.classList.remove("noneview");
+    mensajeErrorLastName.classList.add("view");
+    apellido.classList.add("ErrorInput");
+  } else {
+    mensajeErrorLastName.classList.remove("view");
+    mensajeErrorLastName.classList.add("noneview");
+    apellido.classList.remove("ErrorInput");
+  }
+};
+
+let dni = document.getElementById("form-dni");
+dni.onblur = () => {
+  let x = parseInt(dni.value);
+  localStorage.setItem("dni", x);
+  if (isNaN(x)) {
+    mensajeErrorDni.classList.remove("noneview");
+    mensajeErrorDni.classList.add("view");
+    dni.classList.add("ErrorInput");
+  } else {
+    mensajeErrorDni.classList.remove("view");
+    mensajeErrorDni.classList.add("noneview");
+    dni.classList.remove("ErrorInput");
+  }
+};
+
+let sexo = document.getElementById("select-sexo");
+sexo.onblur = () => {
+  let x = sexo.value;
+  localStorage.setItem("sexo", x);
+  if (x == 0) {
+    mensajeErrorSex.classList.remove("noneview");
+    mensajeErrorSex.classList.add("view");
+    sexo.classList.add("ErrorInput");
+  } else {
+    mensajeErrorSex.classList.remove("view");
+    mensajeErrorSex.classList.add("noneview");
+    sexo.classList.remove("ErrorInput");
+  }
+};
+let mcredit = document.getElementById("form-mcredit");
+mcredit.onblur = () => {
+  let x = mcredit.value;
+  localStorage.setItem("mcredit", x);
+  if (mcredit > 100000 && mcredit < 6000000) {
+    mensajeErrorMCredit.classList.remove("noneview");
+    mensajeErrorMCredit.classList.add("view");
+    mcredit.classList.add("ErrorInput");
+  } else {
+    mensajeErrorMCredit.classList.remove("view");
+    mensajeErrorMCredit.classList.add("noneview");
+    mcredit.classList.remove("ErrorInput");
+  }
+};
+let selectcuot = document.getElementById("select-cuota");
+selectcuot.onblur = () => {
+  let x = selectcuot.value;
+  localStorage.setItem("Cuotas", x);
+  if (x == 0) {
+    mensajeErrorCuota.classList.remove("noneview");
+    mensajeErrorCuota.classList.add("view");
+    selectcuot.classList.add("ErrorInput");
+  } else {
+    mensajeErrorCuota.classList.remove("view");
+    mensajeErrorCuota.classList.add("noneview");
+    selectcuot.classList.remove("ErrorInput");
+  }
+};
+
+let vvehiculo = document.getElementById("form-vvehiculo");
+vvehiculo.onblur = () => {
+  let x = vvehiculo.value;
+  localStorage.setItem("Vvehiculo", x);
+};
+
+// funcion para valirdar el formulario antes del submit
+
+const valForm = [];
+
+function validarFormulario() {
+  let Snombre = nombre.value;
+  if (Snombre.length == 0) {
+    mensajeErrorName.classList.remove("noneview");
+    mensajeErrorName.classList.add("view");
+    nombre.classList.add("ErrorInput");
+  }
+  let Sapellido = apellido.value;
+  if (Sapellido.length == 0) {
+    mensajeErrorLastName.classList.remove("noneview");
+    mensajeErrorLastName.classList.add("view");
+    apellido.classList.add("ErrorInput");
+  }
+  let Sdni = dni.value;
+  if (parseInt(Sdni) < 1000000 || parseInt(Sdni) > 99999999) {
+    mensajeErrorDni.classList.remove("noneview");
+    mensajeErrorDni.classList.add("view");
+    dni.classList.add("ErrorInput");
+  }
+  let montoC = mcredit.value;
+  if (montoC != "") {
+    valForm.push(parseInt(montoC));
+  } else if (montoC == "") {
+    mensajeErrorMCredit.classList.remove("noneview");
+    mensajeErrorMCredit.classList.add("view");
+    mcredit.classList.add("ErrorInput");
+  } else if (parseInt(montoC) < 90000 || parseInt(montoC) > 6000000) {
+    mensajeErrorMCredit.classList.remove("noneview");
+    mensajeErrorMCredit.classList.add("view");
+    mcredit.classList.add("ErrorInput");
+  }
+  let SC = selectcuot.value;
+  if (SC == 0) {
+    mensajeErrorCuota.classList.remove("noneview");
+    mensajeErrorCuota.classList.add("view");
+    selectcuot.classList.add("ErrorInput");
+  } else {
+    valForm.push(parseInt(SC));
+  }
+}
+// Evento para mostrar/ocultar filtro
+
+let valorfilter = false;
+let clickFiltro = document.getElementById("textFilter");
+let MostrarFiltro = document.getElementById("Filtro");
+
+clickFiltro.onclick = () => {
+  if (valorfilter == false) {
+    MostrarFiltro.classList.remove("filtronone");
+    MostrarFiltro.classList.add("filterview");
+    valorfilter = true;
+  } else {
+    MostrarFiltro.classList.remove("filterview");
+    MostrarFiltro.classList.add("filtronone");
+    valorfilter = false;
+  }
+};
+
+// Eventos en el filtro
+
+let filtrovalorrec = document.getElementById("filtrovalorrec");
+let filtrovalormenor = document.getElementById("filtrovalormenor");
+let filtrovalormayor = document.getElementById("filtrovalormayor");
+let filtrobankS = document.getElementById("filtrobankS");
+let filtrobankHSBC = document.getElementById("filtrobankHSBC");
+let elementfilter1 = document.getElementById("elementfilter1");
+let elementfilter2 = document.getElementById("elementfilter2");
+let elementfilter3 = document.getElementById("elementfilter3");
+let elementfilter4 = document.getElementById("elementfilter4");
+let elementfilter5 = document.getElementById("elementfilter5");
+
+// Eliminar elemento del filtro y mostrar el elemento que se esta filtrando
+
+filtrovalorrec.onclick = () => {
+  filtrovalorrec.classList.add("noneview");
+  elementfilter1.classList.remove("noneview");
+  MostrarFiltro.classList.remove("filterview");
+  MostrarFiltro.classList.add("filtronone");
+  valorfilter = false;
+};
+
+filtrovalormenor.onclick = () => {
+  filtrovalormenor.classList.add("noneview");
+  filtrovalormayor.classList.add("noneview");
+  elementfilter2.classList.remove("noneview");
+  MostrarFiltro.classList.remove("filterview");
+  MostrarFiltro.classList.add("filtronone");
+  valorfilter = false;
+};
+filtrovalormayor.onclick = () => {
+  filtrovalormayor.classList.add("noneview");
+  filtrovalormenor.classList.add("noneview");
+  elementfilter3.classList.remove("noneview");
+  MostrarFiltro.classList.remove("filterview");
+  MostrarFiltro.classList.add("filtronone");
+  valorfilter = false;
+};
+filtrobankS.onclick = () => {
+  filtrobankS.classList.add("noneview");
+  elementfilter4.classList.remove("noneview");
+  MostrarFiltro.classList.remove("filterview");
+  MostrarFiltro.classList.add("filtronone");
+  valorfilter = false;
+};
+filtrobankHSBC.onclick = () => {
+  filtrobankHSBC.classList.add("noneview");
+  elementfilter5.classList.remove("noneview");
+  MostrarFiltro.classList.remove("filterview");
+  MostrarFiltro.classList.add("filtronone");
+  valorfilter = false;
+};
+
+// eliminar el valor filtrado y volverlo a mostrar en el filtro
+
+elementfilter1.onclick = () => {
+  elementfilter1.classList.add("noneview");
+  filtrovalorrec.classList.remove("noneview");
+};
+elementfilter2.onclick = () => {
+  elementfilter2.classList.add("noneview");
+  filtrovalormenor.classList.remove("noneview");
+  filtrovalormayor.classList.remove("noneview");
+};
+elementfilter3.onclick = () => {
+  elementfilter3.classList.add("noneview");
+  filtrovalormayor.classList.remove("noneview");
+  filtrovalormenor.classList.remove("noneview");
+};
+elementfilter4.onclick = () => {
+  elementfilter4.classList.add("noneview");
+  filtrobankS.classList.remove("noneview");
+};
+
+elementfilter5.onclick = () => {
+  elementfilter5.classList.add("noneview");
+  filtrobankHSBC.classList.remove("noneview");
+};
+
+/* Objetos vehiculos, que contiene las marcas y modelos */
+
+
+
 /* capturar <SELECT> del html para rellenarlos con las constantes */
 
 let Smarca = document.getElementById("select-marca");
@@ -857,20 +829,22 @@ let cards3 = document.getElementById("card3");
 6 60 cuotas
 El argumento b recibe el array con las cuotas calculas en la funcion que le corresponde a cada banco
 El argumento c recibe un string que es una bandera que si es S carga la imagen de santander rio si es H carga la de HSBC
+El argumento d recibe el texto correspondiente a la linea de credito
+El argumento e recibe el titulo correspondiente a la linea de credito
 */
 let flag = 0;
-function Cargarcc(a, b, c) {
+function Cargarcc(a, b, c, d, e) {
   let x =
     c == "S"
       ? "resource/media/logo-Santander.png"
       : "resource/media/logo-HSBC.png";
 
-  if (a == 0) {
+if (parseInt(a) == 1) {
     b.forEach(function (element, index) {
       const div = document.createElement("div");
       div.setAttribute("class", "cards col-4 align-self-center m-2");
       div.setAttribute("id", `cuot${index}`);
-      div.innerHTML += `<div class="imgCard"><img src="${x}" alt=""></div><div class="txtCard"><p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum laboriosam ut, dolorum iste exercitationem atque! Excepturi velit, mollitia, provident porro voluptate unde aut fugit, sint corrupti impedit quis. Corporis, minus! </p></div><div class="valor"><b>$ ${element}</b></div>`;
+      div.innerHTML += `<div class="imgCard"><img src="${x}" alt=""><h4 class="tituloCard">${e}</h4></div><div class="txtCard"><p>${d}</p></div><div class="valor"><b>$ ${element}</b></div>`;
       contCards.appendChild(div);
       flag++;
     });
@@ -880,7 +854,7 @@ function Cargarcc(a, b, c) {
         const div = document.createElement("div");
         div.setAttribute("class", "cards col-4 align-self-center m-2");
         div.setAttribute("id", `cuot${flag}`);
-        div.innerHTML += `<div class="imgCard"><img src="${x}" alt=""></div><div class="txtCard"><p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum laboriosam ut, dolorum iste exercitationem atque! Excepturi velit, mollitia, provident porro voluptate unde aut fugit, sint corrupti impedit quis. Corporis, minus! </p></div><div class="valor"><b>$ ${element}</b></div>`;
+        div.innerHTML += `<div class="imgCard"><img src="${x}" alt=""></div><h4 class="tituloCard">${e}</h4><div class="txtCard"><p>${d}</p></div><div class="valor"><b>$ ${element}</b></div>`;
         contCards.appendChild(div);
         flag++;
       }
@@ -889,7 +863,7 @@ function Cargarcc(a, b, c) {
 }
 
 function borrarCards() {
-  contCards.innerHTML = "";
+    contCards.innerHTML = "";
 }
 
 function valMcredit(a, b) {
@@ -898,11 +872,54 @@ function valMcredit(a, b) {
   return c;
 }
 
+function disableInput () {
+  nombre.disabled = true;
+  apellido.disabled = true;
+  dni.disabled = true;
+  sexo.disabled = true;
+  mcredit.disabled = true;
+  selectcuot.disabled = true;
+  vvehiculo.disabled = true;
+  Smarca.disabled = true;
+  Smodelo.disabled = true;
+  Sversion.disabled = true;
+  gnc.disabled = true;
+  anio.disabled = true;
+}
+
+btneditar.onclick = () =>{
+  nombre.disabled = false;
+  apellido.disabled = false;
+  dni.disabled = false;
+  sexo.disabled = false;
+  mcredit.disabled = false;
+  selectcuot.disabled = false;
+  vvehiculo.disabled = false;
+  Smarca.disabled = false;
+  Smodelo.disabled = false;
+  Sversion.disabled = false;
+  gnc.disabled = false;
+  anio.disabled = false;
+  borrarCards();
+  btneditar.classList.add('noneview');
+  btncontinuar.classList.remove('noneview');
+}
+
+
 
 btncontinuar.onclick = (e) =>{
+  btncontinuar.classList.add ('noneview');
+  btneditar.classList.remove ('noneview');
+  disableInput();
+  Swal.fire({
+    position: 'top-end',
+    icon: 'success',
+    title: 'Crédito calculado',
+    showConfirmButton: false,
+    timer: 1500
+  })
     e.preventDefault();
     validarFormulario();
-    borrarCards();
     if(!valMcredit(vvehiculo.value, mcredit.value)){
         Swal.fire({
             icon: 'error',
@@ -910,12 +927,13 @@ btncontinuar.onclick = (e) =>{
             text: 'El valor del credito no puede superar el 70% del valor del vehículo',
           })
     }else{
+        borrarCards();
         CalcCreditIFHCBC(parseInt(mcredit.value)); 
         CalcCreditLCSR(parseInt(mcredit.value));
         CalcCreditLISR(parseInt(mcredit.value));
-        Cargarcc(parseInt(selectcuot.value),ValorCuotaIFHCBC,'H');
-        Cargarcc(parseInt(selectcuot.value),ValorCuotaLCSR,'S');
-        Cargarcc(parseInt(selectcuot.value),ValorCuotaLISR,'S');
+        Cargarcc(parseInt(selectcuot.value),ValorCuotaIFHCBC,'H', textIFHCBC, tituloIFHCBC);
+        Cargarcc(parseInt(selectcuot.value),ValorCuotaLCSR,'S', textLCSR, tituloLCSR);
+        Cargarcc(parseInt(selectcuot.value),ValorCuotaLISR,'S', textLISR, tituloLISR);
     }
 }
 
@@ -957,5 +975,3 @@ function CComentarios (){
       })
     })
 }
-
-CComentarios();

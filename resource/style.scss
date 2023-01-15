@@ -238,22 +238,6 @@ html {
       font-size: 18px;
       border: 0.25px solid rgb(68, 67, 67);
       border-radius: 8px;
-      .btncontinuar {
-        height: 25px;
-        width: 255px;
-        font-size: 22px;
-        border: 0.25px solid #444343;
-        border-radius: 8px;
-        margin-top: 10px;
-        background-color: #008cba;
-        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2),
-          0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        height: 3rem;
-      }
-      .btncontinuar:hover {
-        background-color: #00ba8f;
-        cursor: pointer;
-      }
     }
     select {
       height: 3rem;
@@ -298,6 +282,23 @@ html {
   cursor: pointer;
 }
 
+#editar {
+  height: 25px;
+  width: 255px;
+  font-size: 22px;
+  border: 0.25px solid #444343;
+  border-radius: 8px;
+  margin-top: 10px;
+  background-color: #008cba;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  height: 3rem;
+}
+#editar:hover {
+  background-color: #00ba8f;
+  cursor: pointer;
+}
+
 .conteinerCard {
   display: flex;
   flex-direction: row;
@@ -323,6 +324,11 @@ html {
       img {
         width: 100%;
       }
+    }
+    .tituloCard{
+      font-size: 1.65rem;
+      font-style: bold;
+      font-family: 'Secular One', sans-serif;
     }
     .txtCard {
       p {

@@ -12,7 +12,7 @@
     <link rel="shortcut icon" href="resource/media/Favicon.ico" type="image/x-icon">
     <title>Creditos Online</title>
 </head>
-<body onload="LS()">
+<body onload="LS(), CComentarios()">
 
     <!-- Menu Nav -->
 
@@ -78,14 +78,14 @@
             <input type="number" name="MCredit" min="100000" max="10000000" placeholder="Monto del credito: $" id="form-mcredit"/></label>
             <p class="Error noneview" id="ErrorMCredit">El valor ingresado no es valido</p>
             <select name="cuota" id="select-cuota">
-                <option selected="true" disabled="disabled">Cuotas</option>
-                <option value="0">Todas las cuotas disponibles</option>
-                <option value="1">12 cuotas</option>
-                <option value="2">18 cuotas</option>
-                <option value="3">24 cuotas</option>
-                <option value="4">36 cuotas</option>
-                <option value="5">48 cuotas</option>
-                <option value="6">60 cuotas</option>
+                <option selected="true" disabled="disabled" value="0">Cuotas</option>
+                <option value="1" selected="true" disabled="disabled">Todas las cuotas disponibles</option>
+                <option value="2">12 cuotas</option>
+                <option value="3">18 cuotas</option>
+                <option value="4">24 cuotas</option>
+                <option value="5">36 cuotas</option>
+                <option value="6">48 cuotas</option>
+                <option value="7">60 cuotas</option>
             </select>
             <p class="Error noneview" id="ErrorCuotas">El valor ingresado no es valido</p>
           </form>
@@ -128,13 +128,14 @@
             <p class="Error noneview" id="ErrorCuotas">El valor ingresado no es valido</p>
           </form></div>
           <input class="btncontinuar" type="button" value="Simular" id="btncontinuar">
+          <input class="btneditar noneview" type="button" value="Editar" id="editar">
     </div>
 
     <div  class="hipervinculo" id="creditos"><br></div>
 
 <!-- Filtro para los creditos -->
 
-<div class="ContFiltro">
+<div class="ContFiltro noneview">
     <div id="textFilter"><p class="titulo">Filtro<span class="material-symbols-outlined">
         keyboard_arrow_down</span></p></div>
     <div class="filtronone" id="Filtro">
@@ -174,18 +175,18 @@
     <div class="row justify-content-center" id="conteinerCard">
     <div class="cards" id="card1">
         <div class="imgCard"><img src="resource/media/logo-HSBC.png" alt=""></div>
-        <div class="txtCard"><p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum laboriosam ut, dolorum iste exercitationem atque! Excepturi velit, mollitia, provident porro voluptate unde aut fugit, sint corrupti impedit quis. Corporis, minus! </p></div>
-        <div class="valor"><b>$ 2.022.598</b></div>
+        <h4 class="tituloCard">Linea Inclusion Financiera</h4>
+        <div class="txtCard"><p>Esta línea de financiación es una financiación subsidiada por el estado, para poder tomarla debe cumplir una serie de requisitos, con una tasa preferencial con un TNA del 38%, destinada a la compra de vehículos.-</p></div>
     </div>
     <div class="cards" id="card2">
         <div class="imgCard"><img src="resource/media/logo-Santander.png" alt=""></div>
-        <div class="txtCard"><p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum laboriosam ut, dolorum iste exercitationem atque! Excepturi velit, mollitia, provident porro voluptate unde aut fugit, sint corrupti impedit quis. Corporis, minus! </p></div>
-        <div class="valor"><b>$ 2.022.598</b></div>
+        <h4 class="tituloCard">Linea Inclusion Financiera</h4>
+        <div class="txtCard"><p>Esta línea de financiación es una financiación subsidiada por el estado, para poder tomarla debe cumplir una serie de requisitos, con una tasa preferencial con un TNA del 56%, destinada a la compra de vehículos.-</p></div>
     </div>
     <div class="cards" id="card3">
         <div class="imgCard"><img src="resource/media/logo-Santander.png" alt=""></div>
-        <div class="txtCard"><p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum laboriosam ut, dolorum iste exercitationem atque! Excepturi velit, mollitia, provident porro voluptate unde aut fugit, sint corrupti impedit quis. Corporis, minus! </p></div>
-        <div class="valor"><b>$ 2.022.598</b></div>
+        <h4 class="tituloCard">Linea Tradicional</h4>
+        <div class="txtCard"><p>Esta línea de financiación es una financiación tradicional, para poder tomarla debe cumplir una serie de requisitos, con un TNA del 78% destinada a la compra de vehículos.-</p></div>
     </div>
     </div>
 </div>
