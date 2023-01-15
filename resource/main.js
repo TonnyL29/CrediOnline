@@ -947,6 +947,15 @@ function CComentarios (){
         coment.appendChild(row);
       });
     })
+    .catch(error =>{
+      Swal.fire({
+        position: 'top-end',
+        icon: 'error',
+        title: `Ocurrio un error: ${error}`,
+        showConfirmButton: false,
+        timer: 3500
+      })
+    })
 }
 
 CComentarios();
